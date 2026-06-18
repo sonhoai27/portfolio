@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nguyễn Hoài Sơn — Product Engineer</title>
+<meta name="description" content="Product Engineer · 6+ năm xây dựng sản phẩm Web & Mobile cho thị trường quốc tế. Chuyên Frontend, Backend, hệ thống và AI Agents." />
+<meta property="og:title" content="Nguyễn Hoài Sơn — Product Engineer" />
+<meta property="og:description" content="FE · BE · Systems · AI Agents. 6+ năm xây sản phẩm số từ ý tưởng đến vận hành." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#fcfcfd" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='52' font-weight='900' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#fcfcfd;
+    --paper-2:#f3f4f6;
+    --ink:#16181d;
+    --ink-2:#4a4e57;
+    --ink-3:#6c6f78;
+    --line:#e9eaed;
+    --divider:#d8d9de;
+    --blue:#2563eb;
+    --blue-deep:#1e40af;
+    --blue-tint:#e8eefc;
+    --max:1160px;
+    --pad:clamp(20px,5vw,72px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--blue);color:#fff}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .display{font-family:'Montserrat',sans-serif;letter-spacing:-.02em;line-height:.98}
+  h1,h2,h3{font-family:'Montserrat',sans-serif;letter-spacing:-.02em;line-height:1}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+  .rule{height:1px;background:var(--line);width:100%}
+  .rule.ink{background:var(--ink)}
+
+  /* ---------- nav ---------- */
+  nav{position:sticky;top:0;z-index:60;background:rgba(252,252,253,.78);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:var(--max);margin:0 auto;padding:13px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .mark{display:flex;align-items:center;gap:11px;font-weight:700;font-size:.82rem;letter-spacing:.02em}
+  .mark .sq{width:26px;height:26px;background:var(--blue);color:#fff;display:grid;place-items:center;font-family:'Montserrat';font-weight:900;font-size:.85rem;border-radius:6px}
+  .nav-links{display:flex;align-items:center;gap:24px}
+  .nav-links a{font-family:'JetBrains Mono';font-size:.74rem;color:var(--ink-2);letter-spacing:.02em;position:relative;padding:4px 0;transition:color .2s}
+  .nav-links a .n{color:var(--blue);margin-right:5px}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a.active{color:var(--ink)}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .lang{display:inline-flex;border:1px solid var(--divider);font-family:'JetBrains Mono';font-size:.72rem;font-weight:500;border-radius:7px;overflow:hidden}
+  .lang button{border:none;background:none;cursor:pointer;padding:6px 11px;color:var(--ink-3);font-family:inherit;font-weight:500;transition:.18s}
+  .lang button.on{background:var(--ink);color:var(--paper)}
+  .burger{display:none;border:1px solid var(--divider);background:none;border-radius:7px;width:38px;height:34px;cursor:pointer;align-items:center;justify-content:center}
+  .burger svg{width:18px;height:18px;stroke:var(--ink)}
+  @media(max-width:880px){
+    .nav-links{position:fixed;inset:53px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px var(--pad) 18px;transform:translateY(-130%);transition:transform .3s;z-index:55}
+    .nav-links.open{transform:none}
+    .nav-links a{width:100%;padding:13px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+    .burger{display:flex}
+  }
+
+  /* ---------- section scaffolding ---------- */
+  section{padding:clamp(56px,9vw,110px) 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:46px;flex-wrap:wrap}
+  .sec-num{font-family:'JetBrains Mono';font-size:.78rem;color:var(--blue);font-weight:700;letter-spacing:.04em}
+  .sec-title{font-size:clamp(1.7rem,4.4vw,3rem);font-weight:800}
+  .sec-line{flex:1;min-width:60px;height:1px;background:var(--line);align-self:center}
+
+  /* ---------- hero ---------- */
+  .hero{padding-top:clamp(40px,7vw,78px);padding-bottom:0}
+  .hero .eyebrow{font-family:'JetBrains Mono';font-size:.78rem;color:var(--ink-2);letter-spacing:.06em;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:30px}
+  .hero .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--blue);display:inline-block;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .hero h1{font-size:clamp(2.5rem,8vw,6.2rem);font-weight:800;letter-spacing:-.025em;margin-bottom:34px;max-width:15ch;line-height:1.02}
+  .hero h1 .hl{color:var(--blue)}
+  .hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:end;padding-bottom:48px}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:26px;align-items:start}}
+  .hero-lead{font-size:clamp(1rem,1.7vw,1.18rem);color:var(--ink-2);max-width:46ch}
+  .hero-lead b{color:var(--ink);font-weight:600}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono';font-size:.82rem;font-weight:500;padding:13px 20px;border-radius:9px;border:1px solid var(--divider);transition:transform .18s,background .18s,color .18s}
+  .btn .arr{transition:transform .2s}
+  .btn:hover .arr{transform:translate(3px,-3px)}
+  .btn.solid{background:var(--ink);color:var(--paper)}
+  .btn.solid:hover{background:var(--blue);border-color:var(--blue)}
+  .btn.line:hover{background:var(--ink);color:var(--paper)}
+  .signature{font-family:'JetBrains Mono';font-size:.78rem;color:var(--ink-3);text-align:right}
+  .signature b{color:var(--ink);font-weight:700;display:block;font-size:.92rem;margin-bottom:3px}
+  @media(max-width:820px){.signature{text-align:left}}
+
+  /* metrics strip */
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--divider);border-bottom:1px solid var(--divider)}
+  .metrics .m{padding:26px 22px;border-right:1px solid var(--line)}
+  .metrics .m:last-child{border-right:none}
+  .metrics .n{font-family:'Montserrat';font-weight:900;font-size:clamp(2rem,4.4vw,3.2rem);letter-spacing:-.03em;line-height:1}
+  .metrics .n .u{color:var(--blue)}
+  .metrics .l{font-family:'JetBrains Mono';font-size:.7rem;color:var(--ink-3);margin-top:8px;letter-spacing:.02em;line-height:1.4}
+  @media(max-width:680px){.metrics{grid-template-columns:repeat(2,1fr)}.metrics .m:nth-child(2){border-right:none}.metrics .m:nth-child(1),.metrics .m:nth-child(2){border-bottom:1px solid var(--line)}}
+
+  /* ---------- approach ---------- */
+  .approach-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,72px)}
+  @media(max-width:820px){.approach-grid{grid-template-columns:1fr;gap:28px}}
+  .approach-grid .big{font-family:'Montserrat';font-weight:700;font-size:clamp(1.4rem,2.7vw,2.1rem);letter-spacing:-.02em;line-height:1.18}
+  .approach-grid .big .hl{color:var(--blue)}
+  .approach-grid p{color:var(--ink-2);margin-bottom:16px}
+  .principles{margin-top:8px;border-top:1px solid var(--line)}
+  .principles .p{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .principles .pn{font-family:'JetBrains Mono';font-size:.74rem;color:var(--blue);font-weight:700}
+  .principles .pt{font-weight:600;font-family:'Inter';font-size:.98rem;color:var(--ink)}
+  .principles .pd{color:var(--ink-3);font-size:.86rem;margin-top:2px}
+
+  /* ---------- capabilities (editorial rows) ---------- */
+  .cap-list{border-top:1px solid var(--divider)}
+  .cap-row{display:grid;grid-template-columns:54px 1fr 1.3fr;gap:24px;padding:30px 0;border-bottom:1px solid var(--line);align-items:start;transition:background .2s}
+  .cap-row:hover{background:rgba(31,59,255,.03)}
+  .cap-row .ci{font-family:'JetBrains Mono';font-size:.82rem;color:var(--blue);font-weight:700;padding-top:5px}
+  .cap-row h3{font-size:clamp(1.2rem,2.2vw,1.55rem);font-weight:700}
+  .cap-row .cd{color:var(--ink-2);font-size:.95rem}
+  .cap-row .ctags{margin-top:12px;display:flex;flex-wrap:wrap;gap:7px}
+  .ctag{font-family:'JetBrains Mono';font-size:.68rem;color:var(--ink-2);border:1px solid var(--line);border-radius:6px;padding:4px 9px;background:#fff}
+  @media(max-width:760px){.cap-row{grid-template-columns:34px 1fr;gap:14px}.cap-row .cd{grid-column:1/-1}}
+
+  /* ---------- selected work / case studies ---------- */
+  .case{padding:clamp(28px,4vw,46px) 0;border-top:1px solid var(--divider)}
+  .case:first-of-type{border-top:none}
+  .case-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+  .case-idx{font-family:'JetBrains Mono';font-size:.82rem;color:var(--blue);font-weight:700}
+  .case-meta{font-family:'JetBrains Mono';font-size:.72rem;color:var(--ink-3);text-align:right}
+  .case h3{font-size:clamp(1.7rem,4.2vw,2.7rem);font-weight:900;letter-spacing:-.03em;margin:6px 0 4px;max-width:18ch}
+  .case .tagline{color:var(--ink-2);font-size:1.02rem;max-width:60ch;margin-bottom:26px}
+  .pai{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:28px}
+  @media(max-width:760px){.pai{grid-template-columns:1fr;gap:18px}}
+  .pai .col .lab{font-family:'JetBrains Mono';font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--blue);padding-bottom:8px;margin-bottom:10px;border-bottom:1px solid var(--line)}
+  .pai .col p{font-size:.92rem;color:var(--ink-2)}
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:22px}
+  .stat-row .s{padding:20px 16px 20px 0;border-right:1px solid var(--line)}
+  .stat-row .s:last-child{border-right:none}
+  .stat-row .sn{font-family:'Montserrat';font-weight:900;font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.03em;color:var(--ink);line-height:1}
+  .stat-row .sn .u{color:var(--blue)}
+  .stat-row .sl{font-family:'JetBrains Mono';font-size:.66rem;color:var(--ink-3);margin-top:7px;line-height:1.4}
+  @media(max-width:680px){.stat-row{grid-template-columns:repeat(2,1fr)}.stat-row .s:nth-child(2){border-right:none}.stat-row .s:nth-child(1),.stat-row .s:nth-child(2){border-bottom:1px solid var(--line)}}
+  .case-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .case-tags{display:flex;flex-wrap:wrap;gap:7px}
+  .clink{font-family:'JetBrains Mono';font-size:.78rem;font-weight:500;color:var(--blue);display:inline-flex;align-items:center;gap:7px;border-bottom:1px solid transparent;transition:border-color .2s}
+  .clink:hover{border-color:var(--blue)}
+  .app-links{display:flex;flex-wrap:wrap;gap:9px}
+  .app-links a{font-family:'JetBrains Mono';font-size:.74rem;color:var(--ink);border:1px solid var(--divider);border-radius:7px;padding:8px 12px;display:inline-flex;align-items:center;gap:7px;transition:.18s}
+  .app-links a:hover{background:var(--ink);color:var(--paper)}
+  .app-links svg{width:13px;height:13px}
+
+  /* ---------- experience ---------- */
+  .exp{border-top:1px solid var(--divider)}
+  .exp-row{display:grid;grid-template-columns:200px 1fr;gap:30px;padding:28px 0;border-bottom:1px solid var(--line)}
+  @media(max-width:760px){.exp-row{grid-template-columns:1fr;gap:8px}}
+  .exp-when{font-family:'JetBrains Mono';font-size:.78rem;color:var(--ink-3)}
+  .exp-when .co{display:block;color:var(--blue);font-weight:700;margin-top:4px;font-size:.9rem}
+  .exp-role{font-size:1.15rem;font-weight:700;font-family:'Montserrat';margin-bottom:6px}
+  .exp-body{color:var(--ink-2);font-size:.93rem}
+  .exp-body ul{list-style:none;margin-top:8px;display:grid;gap:5px}
+  .exp-body li{position:relative;padding-left:18px;font-size:.9rem}
+  .exp-body li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--blue)}
+
+  /* ---------- other projects ---------- */
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--divider);border-left:1px solid var(--line)}
+  @media(max-width:860px){.proj-grid{grid-template-columns:1fr}}
+  .pcard{padding:26px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .2s;display:flex;flex-direction:column}
+  .pcard:hover{background:#fff}
+  .pcard .pc-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+  .pcard .pc-cat{font-family:'JetBrains Mono';font-size:.66rem;color:var(--blue);font-weight:700;letter-spacing:.04em}
+  .pcard h3{font-size:1.25rem;font-weight:800;margin-bottom:8px}
+  .pcard p{color:var(--ink-2);font-size:.88rem;flex:1;margin-bottom:14px}
+  .pcard .ptags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .pcard .clink{font-size:.74rem}
+
+  /* ---------- stack ---------- */
+  .stack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--divider)}
+  @media(max-width:760px){.stack-grid{grid-template-columns:1fr}}
+  .stack-col{padding:24px 0;border-bottom:1px solid var(--line)}
+  .stack-col:nth-child(odd){padding-right:30px;border-right:1px solid var(--line)}
+  .stack-col:nth-child(even){padding-left:30px}
+  @media(max-width:760px){.stack-col:nth-child(odd){padding-right:0;border-right:none}.stack-col:nth-child(even){padding-left:0}}
+  .stack-col h4{font-family:'JetBrains Mono';font-size:.74rem;font-weight:700;letter-spacing:.06em;color:var(--blue);margin-bottom:14px}
+  .stack-col .items{display:flex;flex-wrap:wrap;gap:8px}
+  .stack-col .items span{font-size:.86rem;color:var(--ink);border:1px solid var(--line);background:#fff;border-radius:7px;padding:6px 11px}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--ink);color:var(--paper);margin-top:0}
+  .contact .wrap{padding-top:clamp(56px,9vw,100px);padding-bottom:clamp(56px,9vw,100px)}
+  .contact .eyebrow{font-family:'JetBrains Mono';font-size:.78rem;color:#8fa0ff;letter-spacing:.06em;margin-bottom:24px}
+  .contact h2{font-size:clamp(1.9rem,5.5vw,4rem);font-weight:800;letter-spacing:-.025em;line-height:1;margin-bottom:30px}
+  .contact h2 .hl{color:#6f8bff}
+  .contact-rows{border-top:1px solid #2a2f3e}
+  .crow{display:grid;grid-template-columns:160px 1fr auto;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid #2a2f3e;transition:padding-left .2s}
+  .crow:hover{padding-left:10px}
+  .crow .ck{font-family:'JetBrains Mono';font-size:.74rem;color:#8089a0;letter-spacing:.04em}
+  .crow .cv{font-family:'Montserrat';font-weight:700;font-size:clamp(1.05rem,2.4vw,1.5rem);color:#fff;word-break:break-word}
+  .crow .cgo{color:#6f8bff}
+  .crow .cgo svg{width:20px;height:20px}
+  @media(max-width:620px){.crow{grid-template-columns:1fr auto;gap:6px 14px}.crow .ck{grid-column:1/-1}}
+
+  footer{background:var(--ink);color:#7a8299;padding:26px var(--pad);border-top:1px solid #2a2f3e;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:'JetBrains Mono';font-size:.72rem}
+
+  /* ===== solution loop: Create → Learn → Analytics ===== */
+  .sol-intro{font-family:'Montserrat';font-weight:700;font-size:clamp(1.25rem,2.6vw,1.9rem);letter-spacing:-.02em;line-height:1.22;max-width:26ch;margin-bottom:38px}
+  .sol-intro .hl{color:var(--blue)}
+  .loop{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--divider)}
+  @media(max-width:860px){.loop{grid-template-columns:1fr}}
+  .phase{padding:26px 24px;border-right:1px solid var(--line);position:relative;display:flex;flex-direction:column}
+  .phase:last-child{border-right:none}
+  @media(max-width:860px){.phase{border-right:none;border-bottom:1px solid var(--line)}.phase:last-child{border-bottom:none}}
+  .phase .pnum{font-family:'JetBrains Mono';font-size:.7rem;color:var(--blue);font-weight:700;margin-bottom:14px}
+  .phase .ptop{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .phase .pico{width:42px;height:42px;border:1px solid var(--divider);border-radius:10px;display:grid;place-items:center;flex-shrink:0}
+  .phase .pico svg{width:21px;height:21px;stroke:var(--blue);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .phase h3{font-family:'Montserrat';font-weight:900;font-size:1.4rem;letter-spacing:-.02em}
+  .phase .pd{color:var(--ink-2);font-size:.87rem;margin:0 0 18px}
+  .phase .pvis{margin-top:auto;background:var(--paper-2);border-radius:10px;padding:16px;min-height:150px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .phase .arrow{position:absolute;right:-13px;top:32px;z-index:3;width:26px;height:26px;background:var(--paper);border:1px solid var(--divider);border-radius:50%;display:grid;place-items:center;font-family:'JetBrains Mono';color:var(--blue);font-size:.85rem}
+  @media(max-width:860px){.phase .arrow{right:auto;left:32px;top:auto;bottom:-13px}}
+  .loop-note{font-family:'JetBrains Mono';font-size:.72rem;color:var(--ink-3);margin-top:18px;display:flex;align-items:center;gap:9px}
+  .loop-note .lt{color:var(--blue);font-size:1rem}
+  .builder{width:100%;display:grid;gap:7px}
+  .builder .blk{height:24px;border-radius:6px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 9px;font-family:'JetBrains Mono';font-size:.57rem;color:var(--ink-2);letter-spacing:.04em}
+  .builder .blk .d{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+  .builder .blk.add{border-style:dashed;color:var(--blue);justify-content:center;background:transparent}
+  .mini-learn{width:100%;max-width:158px;background:linear-gradient(180deg,#ef6240,#e5402a);border-radius:11px;padding:10px}
+  .mini-learn .ml-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .mini-learn .ml-pill{background:#e8a33d;color:#fff;font-family:'JetBrains Mono';font-size:.48rem;font-weight:700;padding:3px 7px;border-radius:12px}
+  .mini-learn .ml-star{color:#ffd24a;font-size:.5rem;font-family:'JetBrains Mono';font-weight:700}
+  .mini-learn .ml-card{background:#fff;border-radius:8px;padding:9px}
+  .mini-learn .ml-q{font-size:.5rem;font-weight:600;color:#333;text-align:center;line-height:1.3;margin-bottom:8px}
+  .mini-learn .ml-opt{height:17px;border-radius:5px;background:#eee;margin-bottom:5px;display:flex;align-items:center;padding:0 7px}
+  .mini-learn .ml-opt.correct{background:#1c9e73}
+  .mini-an{width:100%;display:flex;flex-direction:column;gap:14px}
+  .mini-an .bars{display:flex;align-items:flex-end;gap:7px;height:64px}
+  .mini-an .bars span{flex:1;background:var(--blue);border-radius:3px 3px 0 0;opacity:.85}
+  .mini-an .rings{display:flex;justify-content:space-between;gap:8px}
+  .mini-an .stat{font-family:'JetBrains Mono';font-size:.54rem;color:var(--ink-3);text-align:center;flex:1}
+  .mini-an .stat b{display:block;font-family:'Montserrat';font-weight:900;font-size:1.05rem;color:var(--ink);letter-spacing:-.02em}
+  .mini-an .stat .u{color:var(--blue)}
+
+  /* ===== app showcase (real Google Play images) ===== */
+  .apps{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--divider)}
+  @media(max-width:860px){.apps{grid-template-columns:1fr}}
+  .appcard{padding:22px 20px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+  .appcard:last-child{border-right:none}
+  @media(max-width:860px){.appcard{border-right:none;border-bottom:1px solid var(--line)}.appcard:last-child{border-bottom:none}}
+  .appcard .ahead{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+  .appcard .aico{width:50px;height:50px;border-radius:12px;border:1px solid var(--line);flex-shrink:0;display:block}
+  .appcard .aname{font-family:'Montserrat';font-weight:800;font-size:1.02rem;line-height:1.12}
+  .appcard .acat{font-family:'JetBrains Mono';font-size:.6rem;color:var(--ink-3);margin-top:4px}
+  .appcard .wl{font-family:'JetBrains Mono';font-size:.55rem;font-weight:700;color:var(--blue);border:1px solid var(--blue);border-radius:5px;padding:2px 6px;align-self:flex-start;margin-bottom:12px}
+  .appcard .ashots{display:flex;gap:8px;margin-bottom:13px}
+  .appcard .ashots img{width:calc(50% - 4px);border-radius:10px;border:1px solid var(--line);background:var(--paper-2);display:block}
+  .appcard .ameta{display:flex;gap:18px;margin-bottom:14px}
+  .appcard .ameta .mi b{font-family:'Montserrat';font-weight:900;font-size:1rem;color:var(--ink);display:block;letter-spacing:-.02em}
+  .appcard .ameta .mi b .u{color:var(--blue)}
+  .appcard .ameta .mi span{font-family:'JetBrains Mono';font-size:.58rem;color:var(--ink-3)}
+  .appcard .clink{margin-top:auto;font-size:.72rem}
+
+  /* ===== Bản Sắc phone mockup ===== */
+  .showcase{display:grid;grid-template-columns:auto 1fr;gap:clamp(26px,5vw,60px);align-items:center;border-top:1px solid var(--divider);padding:clamp(30px,4vw,50px) 0}
+  @media(max-width:760px){.showcase{grid-template-columns:1fr;justify-items:center}.showcase .sc-text{justify-self:start}}
+  .phs{display:flex;gap:16px}
+  @media(max-width:520px){.phs .ph:nth-child(2){display:none}}
+  .ph{width:198px;aspect-ratio:9/19.3;background:#fff;border:2px solid var(--divider);border-radius:28px;overflow:hidden;position:relative;flex-shrink:0}
+  .ph .notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:44px;height:5px;background:var(--ink);border-radius:3px;z-index:6}
+  .ph .sbar{display:flex;justify-content:space-between;padding:9px 15px 3px;font-family:'JetBrains Mono';font-size:.54rem;color:#fff;position:relative;z-index:4}
+  .bs{position:absolute;inset:0;background:linear-gradient(180deg,#ef6240,#e5402a);display:flex;flex-direction:column}
+  .bs-top{display:flex;align-items:center;justify-content:space-between;padding:3px 11px 9px}
+  .bs-pill{font-family:'JetBrains Mono';font-weight:700;font-size:.5rem;color:#fff;padding:4px 9px;border-radius:20px}
+  .bs-pill.train{background:#2e7cf6}
+  .bs-pill.compete{background:#e8a33d}
+  .bs-star{background:#3a1208;color:#ffd24a;font-size:.52rem;font-weight:700;padding:3px 9px;border-radius:20px;font-family:'JetBrains Mono'}
+  .bs-menu{color:#fff;font-size:.85rem;line-height:.6}
+  .bs-media{margin:0 11px;height:70px;border-radius:8px;background:#f3e9d6;border:1px solid rgba(0,0,0,.1);display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .bs-media .paper{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:.82rem;color:#b32218;letter-spacing:.02em}
+  .bs-media .psub{font-family:Georgia,serif;font-size:.4rem;color:#7a4a1a;margin-top:2px}
+  .bs-timer{margin:8px 11px 0;height:5px;border-radius:3px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+  .bs-timer i{position:absolute;left:0;top:0;bottom:0;width:55%;background:#7c3aed;border-radius:3px}
+  .bs-card{margin:9px 9px 0;background:#fff;border-radius:11px;padding:9px 9px 10px;flex:1;display:flex;flex-direction:column}
+  .bs-qn{font-family:'JetBrains Mono';font-size:.46rem;color:#aaa;text-align:center;margin-bottom:5px}
+  .bs-q{font-size:.55rem;font-weight:600;color:#222;text-align:center;line-height:1.32;margin-bottom:8px}
+  .bs-opt{height:23px;border-radius:7px;background:#efefef;display:flex;align-items:center;padding:0 8px;margin-bottom:6px;font-size:.55rem;color:#555;font-weight:600}
+  .bs-opt .av{width:14px;height:14px;border-radius:50%;background:#c9d4e8;margin-left:auto;border:1px solid #fff}
+  .bs-opt .vc{font-family:'JetBrains Mono';font-size:.5rem;color:#999;margin-left:5px;min-width:7px}
+  .bs-opt.correct{background:#1c9e73;color:#fff}
+  .bs-opt.correct .vc{color:#fff}
+  .bs-opt.correct .ck{margin-left:5px;color:#fff;font-size:.6rem}
+  .bs-opt.sel{background:#2e7cf6;color:#fff}
+  .bs-foot{background:#fbf0d5;padding:8px 10px 11px}
+  .bs-streak{display:flex;align-items:center;gap:5px;font-size:.5rem;color:#b07c12;font-weight:700;margin-bottom:6px}
+  .bs-streak .c{color:#e0a82e;font-size:.6rem}
+  .bs-btn{background:#f2c14e;border-radius:8px;text-align:center;padding:6px;font-size:.56rem;font-weight:700;color:#7a5410}
+  .bs-x2{position:absolute;right:5px;top:31%;font-family:'Montserrat';font-weight:900;font-size:1.5rem;color:#ffc400;transform:rotate(-9deg);text-shadow:1.5px 1.5px 0 #b35a00;z-index:7}
+  .play-link{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono';font-size:.78rem;font-weight:500;color:var(--paper);background:var(--ink);border:1px solid var(--divider);border-radius:9px;padding:11px 18px;transition:.18s}
+  .play-link:hover{background:var(--blue);border-color:var(--blue)}
+  .play-link svg{width:15px;height:15px}
+
+  /* ===== projects grid (each its own project) ===== */
+  .proj-sub{font-family:'JetBrains Mono';font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--blue);margin:8px 0 22px}
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--divider);border-left:1px solid var(--line)}
+  @media(max-width:880px){.work-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.work-grid{grid-template-columns:1fr}}
+  .wcard{border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;background:var(--paper);transition:background .2s}
+  .wcard:hover{background:#fff}
+  .wmedia{height:186px;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--paper-2);overflow:hidden;padding:16px;border-bottom:1px solid var(--line)}
+  .wmedia.cover{padding:0;position:relative;display:block}
+  .wmedia.cover img{width:100%;height:100%;object-fit:cover;display:block}
+  .wmedia .ic{width:58px;height:58px;border-radius:14px;border:1px solid var(--line);flex-shrink:0;display:block}
+  .wmedia .shot{height:100%;width:auto;border-radius:10px;border:1px solid var(--line);display:block}
+  .wbody{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+  .wcat{font-family:'JetBrains Mono';font-size:.6rem;color:var(--blue);font-weight:700;letter-spacing:.03em;margin-bottom:9px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+  .wcat .badge{color:var(--ink-3);font-weight:700;white-space:nowrap}
+  .wbody h4{font-family:'Montserrat';font-weight:800;font-size:1.15rem;letter-spacing:-.02em;margin-bottom:7px}
+  .wbody p{color:var(--ink-2);font-size:.85rem;flex:1;margin-bottom:13px;line-height:1.5}
+  .wtags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .wlink{margin-top:auto;font-family:'JetBrains Mono';font-size:.72rem;font-weight:500;color:var(--blue);display:inline-flex;align-items:center;gap:6px;align-self:flex-start}
+  .wlink:hover{text-decoration:underline}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{scroll-behavior:auto}}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="#top" class="mark"><span class="sq">S</span> NGUYỄN HOÀI SƠN</a>
+    <div class="nav-links" id="navlinks">
+      <a href="#solution"><span class="n">01</span><span data-vi="Giải pháp" data-en="Solution">Giải pháp</span></a>
+      <a href="#capabilities"><span class="n">02</span><span data-vi="Năng lực" data-en="Capabilities">Năng lực</span></a>
+      <a href="#work"><span class="n">03</span><span data-vi="Dự án" data-en="Work">Dự án</span></a>
+      <a href="#experience"><span class="n">04</span><span data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</span></a>
+      <a href="#contact"><span class="n">05</span><span data-vi="Liên hệ" data-en="Contact">Liên hệ</span></a>
+    </div>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="vi-btn" class="on" onclick="setLang('vi')">VI</button>
+        <button id="en-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<a id="top"></a>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero wrap">
+  <div class="eyebrow reveal">
+    <span><span class="dot"></span> PRODUCT ENGINEER</span>
+    <span>FE · BE · SYSTEMS · AI AGENTS</span>
+    <span data-vi="HCM, VIỆT NAM" data-en="HCM, VIETNAM">HCM, VIỆT NAM</span>
+    <span style="color:var(--blue)" data-vi="● SẴN SÀNG NHẬN VIỆC" data-en="● OPEN TO WORK">● SẴN SÀNG NHẬN VIỆC</span>
+  </div>
+  <h1 class="reveal" data-vi="Xây sản phẩm số từ <span class='hl'>ý tưởng</span> đến <span class='hl'>vận hành</span>." data-en="I build digital products from <span class='hl'>idea</span> to <span class='hl'>production</span>.">Xây sản phẩm số từ <span class="hl">ý tưởng</span> đến <span class="hl">vận hành</span>.</h1>
+  <div class="hero-grid reveal">
+    <div>
+      <p class="hero-lead" data-vi="<b>6+ năm</b> xây dựng Web &amp; Mobile cho thị trường quốc tế — Âu, Phi, Úc, Việt Nam. Tự đảm nhận trọn vòng đời: <b>thiết kế UI/UX → Frontend → Backend → hệ thống → AI &amp; Agent → triển khai.</b>" data-en="<b>6+ years</b> building Web &amp; Mobile for international markets — Europe, Africa, Australia, Vietnam. End-to-end ownership: <b>UI/UX design → Frontend → Backend → systems → AI &amp; Agents → deployment.</b>"><b>6+ năm</b> xây dựng Web &amp; Mobile cho thị trường quốc tế — Âu, Phi, Úc, Việt Nam. Tự đảm nhận trọn vòng đời: <b>thiết kế UI/UX → Frontend → Backend → hệ thống → AI &amp; Agent → triển khai.</b></p>
+      <div class="hero-cta">
+        <a href="#work" class="btn solid"><span data-vi="Xem dự án" data-en="View work">Xem dự án</span> <span class="arr">↗</span></a>
+        <a href="#contact" class="btn line"><span data-vi="Liên hệ" data-en="Get in touch">Liên hệ</span></a>
+      </div>
+    </div>
+    <div class="signature">
+      <b>Nguyễn Hoài Sơn</b>
+      <span data-vi="AI Product Engineer @ Wolffun Game" data-en="AI Product Engineer @ Wolffun Game">AI Product Engineer @ Wolffun Game</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="metrics reveal">
+    <div class="m"><div class="n">6<span class="u">+</span></div><div class="l" data-vi="NĂM KINH NGHIỆM" data-en="YEARS EXPERIENCE">NĂM KINH NGHIỆM</div></div>
+    <div class="m"><div class="n">10<span class="u">+</span></div><div class="l" data-vi="SẢN PHẨM ĐÃ SHIP" data-en="PRODUCTS SHIPPED">SẢN PHẨM ĐÃ SHIP</div></div>
+    <div class="m"><div class="n">4</div><div class="l" data-vi="CHÂU LỤC PHỤC VỤ" data-en="CONTINENTS SERVED">CHÂU LỤC PHỤC VỤ</div></div>
+    <div class="m"><div class="n">1K<span class="u">+</span></div><div class="l" data-vi="NGƯỜI HỌC ĐỒNG THỜI" data-en="CONCURRENT LEARNERS">NGƯỜI HỌC ĐỒNG THỜI</div></div>
+  </div>
+</div>
+
+<!-- ===================== SOLUTION: CREATE → LEARN → ANALYTICS ===================== -->
+<section id="solution" class="wrap">
+  <div class="sec-head reveal">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title" data-vi="Giải pháp đào tạo" data-en="The training solution">Giải pháp đào tạo</h2>
+    <span class="sec-line"></span>
+  </div>
+  <p class="sol-intro reveal" data-vi="Mình xây trọn vòng lặp học tập số: <span class='hl'>Tạo → Học → Phân tích</span>. Một hệ thống khép kín — dữ liệu mỗi vòng học quay lại làm nội dung tốt hơn." data-en="I build the full digital learning loop: <span class='hl'>Create → Learn → Analytics</span>. A closed system — data from each cycle feeds back to make content better.">Mình xây trọn vòng lặp học tập số: <span class="hl">Tạo → Học → Phân tích</span>. Một hệ thống khép kín — dữ liệu mỗi vòng học quay lại làm nội dung tốt hơn.</p>
+
+  <div class="loop reveal">
+    <div class="phase">
+      <div class="pnum">01 / CREATE</div>
+      <div class="ptop">
+        <div class="pico"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M14 6l4 4"/></svg></div>
+        <h3 data-vi="Tạo" data-en="Create">Tạo</h3>
+      </div>
+      <div class="pd" data-vi="Creator Platform: lesson builder kéo-thả, nội dung media-rich và ngân hàng câu hỏi trắc nghiệm nano." data-en="Creator Platform: drag-and-drop lesson builder, media-rich content and a nano quiz bank.">Creator Platform: lesson builder kéo-thả, nội dung media-rich và ngân hàng câu hỏi trắc nghiệm nano.</div>
+      <div class="pvis">
+        <div class="builder">
+          <div class="blk"><span class="d" style="background:#2563eb"></span> TEXT BLOCK</div>
+          <div class="blk"><span class="d" style="background:#e8a33d"></span> IMAGE / VIDEO</div>
+          <div class="blk"><span class="d" style="background:#1c9e73"></span> QUIZ · 10Q</div>
+          <div class="blk add">+ ADD BLOCK</div>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </div>
+    <div class="phase">
+      <div class="pnum">02 / LEARN</div>
+      <div class="ptop">
+        <div class="pico"><svg viewBox="0 0 24 24"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M7 10v5c0 1 2.2 2.2 5 2.2s5-1.2 5-2.2v-5"/></svg></div>
+        <h3 data-vi="Học" data-en="Learn">Học</h3>
+      </div>
+      <div class="pd" data-vi="Bài nano &amp; micro trên mobile: trắc nghiệm, streak, gamification — học 1 phút mỗi ngày, mượt cả khi offline." data-en="Nano &amp; micro lessons on mobile: quizzes, streaks, gamification — learn 1 minute a day, smooth even offline.">Bài nano &amp; micro trên mobile: trắc nghiệm, streak, gamification — học 1 phút mỗi ngày, mượt cả khi offline.</div>
+      <div class="pvis">
+        <div style="width:100%;max-width:150px;display:grid;gap:8px">
+          <div class="mono" style="font-size:.56rem;color:var(--ink-3);text-align:center;letter-spacing:.06em" data-vi="CÂU HỎI 1 / 10" data-en="QUESTION 1 / 10">CÂU HỎI 1 / 10</div>
+          <div style="height:18px;border-radius:5px;background:#fff;border:1px solid var(--line)"></div>
+          <div style="height:18px;border-radius:5px;background:var(--blue)"></div>
+          <div style="height:18px;border-radius:5px;background:#fff;border:1px solid var(--line)"></div>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </div>
+    <div class="phase">
+      <div class="pnum">03 / ANALYTICS</div>
+      <div class="ptop">
+        <div class="pico"><svg viewBox="0 0 24 24"><path d="M4 19V11M9 19V5M14 19v-6M19 19v-9"/><path d="M3 21h18"/></svg></div>
+        <h3 data-vi="Phân tích" data-en="Analytics">Phân tích</h3>
+      </div>
+      <div class="pd" data-vi="Dashboard tiến độ, tỉ lệ hoàn thành, lỗ hổng kỹ năng và leaderboard — AI Tutor dùng dữ liệu này để cá nhân hoá." data-en="Dashboards for progress, completion, skill gaps and leaderboards — the AI Tutor uses this data to personalize.">Dashboard tiến độ, tỉ lệ hoàn thành, lỗ hổng kỹ năng và leaderboard — AI Tutor dùng dữ liệu này để cá nhân hoá.</div>
+      <div class="pvis">
+        <div class="mini-an">
+          <div class="bars"><span style="height:45%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:88%"></span><span style="height:62%"></span><span style="height:95%"></span></div>
+          <div class="rings">
+            <div class="stat"><b>95<span class="u">%</span></b><span data-vi="HOÀN THÀNH" data-en="COMPLETION">HOÀN THÀNH</span></div>
+            <div class="stat"><b>1K<span class="u">+</span></b><span data-vi="HỌC VIÊN" data-en="LEARNERS">HỌC VIÊN</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="loop-note"><span class="lt">↻</span> <span data-vi="Vòng lặp khép kín — mình đảm nhận từ thiết kế UI/UX, frontend, backend đến AI Agent ở cả ba pha." data-en="A closed loop — I own UI/UX, frontend, backend and the AI Agent across all three phases.">Vòng lặp khép kín — mình đảm nhận từ thiết kế UI/UX, frontend, backend đến AI Agent ở cả ba pha.</span></div>
+</section>
+
+<!-- ===================== CAPABILITIES ===================== -->
+<section id="capabilities" class="wrap">
+  <div class="sec-head reveal">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title" data-vi="Năng lực" data-en="Capabilities">Năng lực</h2>
+    <span class="sec-line"></span>
+  </div>
+  <p class="sol-intro reveal" data-vi="Một Product Engineer trọn vòng đời — từ nghiên cứu &amp; thiết kế đến code, hệ thống và AI — qua <span class='hl'>bốn trụ cột</span>." data-en="A full-lifecycle Product Engineer — from research &amp; design to code, systems and AI — across <span class='hl'>four pillars</span>.">Một Product Engineer trọn vòng đời — từ nghiên cứu &amp; thiết kế đến code, hệ thống và AI — qua <span class="hl">bốn trụ cột</span>.</p>
+  <div class="cap-list">
+    <div class="cap-row reveal">
+      <div class="ci">01</div>
+      <h3 data-vi="Product, UI/UX &amp; Research" data-en="Product, UI/UX &amp; Research">Product, UI/UX &amp; Research</h3>
+      <div>
+        <div class="cd" data-vi="Nghiên cứu người dùng, thiết kế UI/UX và phân tích nghiệp vụ. Vẽ user journey, dựng prototype trên Figma và đảm bảo chất lượng QA/QC — biến insight thành sản phẩm đo được." data-en="User research, UI/UX design and business analysis. User journey mapping, Figma prototyping and QA/QC — turning insight into measurable products.">Nghiên cứu người dùng, thiết kế UI/UX và phân tích nghiệp vụ. Vẽ user journey, dựng prototype trên Figma và đảm bảo chất lượng QA/QC — biến insight thành sản phẩm đo được.</div>
+        <div class="ctags"><span class="ctag">UX Research</span><span class="ctag">UI/UX Design</span><span class="ctag">Figma</span><span class="ctag">User Journey</span><span class="ctag">Business Analysis</span><span class="ctag">QA / QC</span><span class="ctag">Analytics</span></div>
+      </div>
+    </div>
+    <div class="cap-row reveal">
+      <div class="ci">02</div>
+      <h3 data-vi="Frontend &amp; Mobile" data-en="Frontend &amp; Mobile">Frontend &amp; Mobile</h3>
+      <div>
+        <div class="cd" data-vi="Kiến trúc frontend &amp; mobile hiệu năng cao và design system tái sử dụng. Tối ưu render cho hàng nghìn người dùng đồng thời; phát hành app B2C/B2B lên App Store &amp; Google Play." data-en="High-performance frontend &amp; mobile architecture and reusable design systems. Render-optimized for thousands of concurrent users; shipping B2C/B2B apps to the App Store &amp; Google Play.">Kiến trúc frontend &amp; mobile hiệu năng cao và design system tái sử dụng. Tối ưu render cho hàng nghìn người dùng đồng thời; phát hành app B2C/B2B lên App Store &amp; Google Play.</div>
+        <div class="ctags"><span class="ctag">React.js</span><span class="ctag">Next.js</span><span class="ctag">React Native</span><span class="ctag">Flutter</span><span class="ctag">TypeScript</span><span class="ctag">TailwindCSS</span><span class="ctag">Design Systems</span></div>
+      </div>
+    </div>
+    <div class="cap-row reveal">
+      <div class="ci">03</div>
+      <h3 data-vi="Backend &amp; Hệ thống" data-en="Backend &amp; Systems">Backend &amp; Hệ thống</h3>
+      <div>
+        <div class="cd" data-vi="Thiết kế logic backend, API và hệ thống thời gian thực. Database, container hoá, CI/CD và triển khai cloud cho quy mô lớn." data-en="Backend logic, APIs and real-time systems. Databases, containerization, CI/CD and cloud deployment at scale.">Thiết kế logic backend, API và hệ thống thời gian thực. Database, container hoá, CI/CD và triển khai cloud cho quy mô lớn.</div>
+        <div class="ctags"><span class="ctag">Node.js</span><span class="ctag">NestJS</span><span class="ctag">FastAPI</span><span class="ctag">Golang</span><span class="ctag">PostgreSQL</span><span class="ctag">MongoDB</span><span class="ctag">Docker</span><span class="ctag">CI/CD</span><span class="ctag">Azure / GCP</span><span class="ctag">WebSocket</span></div>
+      </div>
+    </div>
+    <div class="cap-row reveal">
+      <div class="ci">04</div>
+      <h3 data-vi="AI &amp; Agents" data-en="AI &amp; Agents">AI &amp; Agents</h3>
+      <div>
+        <div class="cd" data-vi="Xây AI Agent end-to-end: RAG pipeline, real-time LLM streaming, prompt architecture và persona system cho sản phẩm AI chạy thật." data-en="End-to-end AI Agents: RAG pipelines, real-time LLM streaming, prompt architecture and persona systems for production AI.">Xây AI Agent end-to-end: RAG pipeline, real-time LLM streaming, prompt architecture và persona system cho sản phẩm AI chạy thật.</div>
+        <div class="ctags"><span class="ctag">AI Agents</span><span class="ctag">RAG</span><span class="ctag">LLM Streaming</span><span class="ctag">Prompt Architecture</span><span class="ctag">Google ADK</span><span class="ctag">Agno</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SELECTED WORK ===================== -->
+<section id="work" class="wrap">
+  <div class="sec-head reveal">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title" data-vi="Dự án nổi bật" data-en="Selected work">Dự án nổi bật</h2>
+    <span class="sec-line"></span>
+  </div>
+
+  <!-- CASE 1 — Trainizi -->
+  <article class="case reveal">
+    <div class="case-top">
+      <span class="case-idx">01 / TRAINIZI</span>
+      <span class="case-meta" data-vi="Product Engineer · 2022–2025 · Next.js · React Native · RAG" data-en="Product Engineer · 2022–2025 · Next.js · React Native · RAG">Product Engineer · 2022–2025 · Next.js · React Native · RAG</span>
+    </div>
+    <h3 data-vi="Nền tảng microlearning AI cho doanh nghiệp" data-en="AI microlearning platform for enterprise">Nền tảng microlearning AI cho doanh nghiệp</h3>
+    <p class="tagline" data-vi="Đào tạo lực lượng lao động quy mô lớn qua mobile — giải pháp AI #1 ASEAN, được Tuổi Trẻ, Thanh Niên và Naver đưa tin." data-en="Training large workforces via mobile — the #1 AI solution in ASEAN, featured by Tuoi Tre, Thanh Nien and Naver.">Đào tạo lực lượng lao động quy mô lớn qua mobile — giải pháp AI #1 ASEAN, được Tuổi Trẻ, Thanh Niên và Naver đưa tin.</p>
+    <div class="pai">
+      <div class="col"><div class="lab" data-vi="VẤN ĐỀ" data-en="PROBLEM">VẤN ĐỀ</div><p data-vi="Doanh nghiệp ở Phi, Âu, Việt Nam cần đào tạo hàng nghìn nhân sự qua điện thoại, trên mạng yếu, với nội dung phải hợp văn hoá từng vùng." data-en="Enterprises across Africa, Europe and Vietnam needed to train thousands of staff via phone, on weak networks, with culturally-localized content.">Doanh nghiệp ở Phi, Âu, Việt Nam cần đào tạo hàng nghìn nhân sự qua điện thoại, trên mạng yếu, với nội dung phải hợp văn hoá từng vùng.</p></div>
+      <div class="col"><div class="lab" data-vi="GIẢI PHÁP" data-en="APPROACH">GIẢI PHÁP</div><p data-vi="Dẫn dắt kiến trúc FE Web (Next.js) + Mobile (React Native). Xây Creator Platform (lesson builder, analytics, CMS) và LXP. Ra mắt AI Tutor Agent dùng RAG để cá nhân hoá và chỉ ra lỗ hổng kỹ năng." data-en="Led FE architecture for Web (Next.js) + Mobile (React Native). Built the Creator Platform (lesson builder, analytics, CMS) and LXP. Launched a RAG-powered AI Tutor Agent for personalization and skill-gap guidance.">Dẫn dắt kiến trúc FE Web (Next.js) + Mobile (React Native). Xây Creator Platform (lesson builder, analytics, CMS) và LXP. Ra mắt AI Tutor Agent dùng RAG để cá nhân hoá và chỉ ra lỗ hổng kỹ năng.</p></div>
+      <div class="col"><div class="lab" data-vi="KẾT QUẢ" data-en="IMPACT">KẾT QUẢ</div><p data-vi="Shared UI library giảm ~30% thời gian phát triển. Hệ thống gánh 1,000+ người học đồng thời. Bài học media-rich đạt tỉ lệ hoàn thành 95%." data-en="A shared UI library cut dev time ~30%. The system handled 1,000+ concurrent learners. Media-rich lessons reached 95% completion.">Shared UI library giảm ~30% thời gian phát triển. Hệ thống gánh 1,000+ người học đồng thời. Bài học media-rich đạt tỉ lệ hoàn thành 95%.</p></div>
+    </div>
+    <div class="stat-row">
+      <div class="s"><div class="sn">−30<span class="u">%</span></div><div class="sl" data-vi="THỜI GIAN DEV" data-en="DEV TIME">THỜI GIAN DEV</div></div>
+      <div class="s"><div class="sn">1K<span class="u">+</span></div><div class="sl" data-vi="LEARNER ĐỒNG THỜI" data-en="CONCURRENT LEARNERS">LEARNER ĐỒNG THỜI</div></div>
+      <div class="s"><div class="sn">95<span class="u">%</span></div><div class="sl" data-vi="TỈ LỆ HOÀN THÀNH" data-en="COMPLETION RATE">TỈ LỆ HOÀN THÀNH</div></div>
+      <div class="s"><div class="sn">#1</div><div class="sl" data-vi="AI ASEAN" data-en="AI IN ASEAN">AI ASEAN</div></div>
+    </div>
+    <div class="case-foot">
+      <div class="case-tags"><span class="ctag">Next.js</span><span class="ctag">React Native</span><span class="ctag">RAG</span><span class="ctag">AI Agent</span><span class="ctag">LXP</span><span class="ctag">Design System</span></div>
+      <a class="clink" href="https://trainizi.com/vi" target="_blank" rel="noopener">trainizi.com <span>↗</span></a>
+    </div>
+  </article>
+
+  <!-- CASE 2 — Wolffun -->
+  <article class="case reveal">
+    <div class="case-top">
+      <span class="case-idx">02 / WOLFFUN GAME</span>
+      <span class="case-meta" data-vi="AI Product Engineer · 2025–nay · Flutter · LLM · Real-time" data-en="AI Product Engineer · 2025–now · Flutter · LLM · Real-time">AI Product Engineer · 2025–nay · Flutter · LLM · Real-time</span>
+    </div>
+    <h3 data-vi="AI Soulmate Companion — bạn đồng hành cảm xúc" data-en="AI Soulmate Companion — emotional AI">AI Soulmate Companion — bạn đồng hành cảm xúc</h3>
+    <p class="tagline" data-vi="Một người bạn AI tập trung vào tương tác cảm xúc và hội thoại cá nhân hoá theo thời gian thực." data-en="An AI companion focused on emotional interaction and personalized, real-time conversations.">Một người bạn AI tập trung vào tương tác cảm xúc và hội thoại cá nhân hoá theo thời gian thực.</p>
+    <div class="pai">
+      <div class="col"><div class="lab" data-vi="VẤN ĐỀ" data-en="PROBLEM">VẤN ĐỀ</div><p data-vi="Bạn đồng hành AI phải phản hồi tức thì, giữ tính cách nhất quán và nhớ ngữ cảnh qua những cuộc trò chuyện dài hàng tuần." data-en="An AI companion must respond instantly, keep a consistent personality and remember context across conversations spanning weeks.">Bạn đồng hành AI phải phản hồi tức thì, giữ tính cách nhất quán và nhớ ngữ cảnh qua những cuộc trò chuyện dài hàng tuần.</p></div>
+      <div class="col"><div class="lab" data-vi="GIẢI PHÁP" data-en="APPROACH">GIẢI PHÁP</div><p data-vi="Xây app Flutter với real-time LLM streaming độ trễ thấp. Thiết kế backend cho hành vi AI chủ động dựa trên lịch sử người dùng, cùng prompt architecture &amp; persona system." data-en="Built a Flutter app with low-latency real-time LLM streaming. Designed backend for proactive AI behaviors based on user history, plus prompt architecture &amp; persona systems.">Xây app Flutter với real-time LLM streaming độ trễ thấp. Thiết kế backend cho hành vi AI chủ động dựa trên lịch sử người dùng, cùng prompt architecture &amp; persona system.</p></div>
+      <div class="col"><div class="lab" data-vi="KẾT QUẢ" data-en="IMPACT">KẾT QUẢ</div><p data-vi="Hội thoại AI mượt, độ trễ thấp; tính cách nhất quán xuyên suốt; xử lý long-form dialogue với bộ nhớ ngữ cảnh dài hạn." data-en="Smooth, low-latency AI conversations; consistent personality throughout; long-form dialogue with persistent contextual memory.">Hội thoại AI mượt, độ trễ thấp; tính cách nhất quán xuyên suốt; xử lý long-form dialogue với bộ nhớ ngữ cảnh dài hạn.</p></div>
+    </div>
+    <div class="stat-row">
+      <div class="s"><div class="sn" data-vi="Thời gian thực" data-en="Real-time">Thời gian thực</div><div class="sl" data-vi="LLM STREAMING" data-en="LLM STREAMING">LLM STREAMING</div></div>
+      <div class="s"><div class="sn" data-vi="Chủ động" data-en="Proactive">Chủ động</div><div class="sl" data-vi="HÀNH VI AI" data-en="AI BEHAVIOR">HÀNH VI AI</div></div>
+      <div class="s"><div class="sn" data-vi="Dài hạn" data-en="Long-term">Dài hạn</div><div class="sl" data-vi="BỘ NHỚ NGỮ CẢNH" data-en="CONTEXTUAL MEMORY">BỘ NHỚ NGỮ CẢNH</div></div>
+      <div class="s"><div class="sn" data-vi="Nhất quán" data-en="Consistent">Nhất quán</div><div class="sl" data-vi="PERSONA SYSTEM" data-en="PERSONA SYSTEM">PERSONA SYSTEM</div></div>
+    </div>
+    <div class="case-foot">
+      <div class="case-tags"><span class="ctag">Flutter</span><span class="ctag">LLM</span><span class="ctag">Real-time Streaming</span><span class="ctag">Prompt Architecture</span><span class="ctag">Persona System</span></div>
+    </div>
+  </article>
+
+  <!-- ALL PROJECTS — each its own entry -->
+  <h3 class="proj-sub" data-vi="TẤT CẢ DỰ ÁN" data-en="ALL PROJECTS">TẤT CẢ DỰ ÁN</h3>
+  <div class="work-grid reveal">
+
+    <div class="wcard">
+      <div class="wmedia">
+        <img class="ic" src="https://play-lh.googleusercontent.com/Pok92VfVpli0P_BICgkxMpP74r5DmCryFEyIfPwsh_mBe3ZcRGeCPWhjUokvV4W4H1XY82of1Msj055HHFnK=w128" alt="VTCiZi" loading="lazy" />
+        <img class="shot" src="https://play-lh.googleusercontent.com/04Yntj_vZmfhx1pHFqsyIAO6kJMzvFjb7DG528vUTgI19gYZPQg5T2fsIv2_TF9QxAtoBI8ozOBUzAPm2dW4qQ=h360" alt="VTCiZi screenshot" loading="lazy" />
+      </div>
+      <div class="wbody">
+        <div class="wcat"><span data-vi="Mobile · Nano-learning" data-en="Mobile · Nano-learning">Mobile · Nano-learning</span><span class="badge" style="color:var(--blue)">WHITE-LABEL TRAINIZI</span></div>
+        <h4>VTCiZi</h4>
+        <p data-vi="App đào tạo nội bộ Nanolearning + AI (VTC × Trainizi). Mình thiết kế UI/UX và code, phát hành lên Google Play." data-en="Internal Nanolearning + AI training app (VTC × Trainizi). I designed the UI/UX and built it, published to Google Play.">App đào tạo nội bộ Nanolearning + AI (VTC × Trainizi). Mình thiết kế UI/UX và code, phát hành lên Google Play.</p>
+        <div class="wtags"><span class="ctag">Flutter</span><span class="ctag">Nanolearning</span><span class="ctag">AI</span></div>
+        <a class="wlink" href="https://play.google.com/store/apps/details?id=com.vtcizi.app&hl=vi" target="_blank" rel="noopener">Google Play <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="wcard">
+      <div class="wmedia">
+        <img class="ic" src="https://play-lh.googleusercontent.com/3LD-VPDivE_en1ylJaQNny-37T4tQrD_-NcGoa0pOm_hLsE8W0VIEkYnZa3t5QykVZsj7TqVbKMSaueB8y84H0I=w128" alt="AU-EU Youth Voices Lab" loading="lazy" />
+        <img class="shot" src="https://play-lh.googleusercontent.com/Txb2QBP771SP_vkhiMuGyB6UxSRPGhhX_nD5xXTovMt5cFFU9986M3_bXvCy6nEBj5OPg3BWJ7Bs3zYsKQm0=h360" alt="AU-EU Youth Voices Lab screenshot" loading="lazy" />
+      </div>
+      <div class="wbody">
+        <div class="wcat"><span data-vi="Mobile · Giáo dục" data-en="Mobile · Education">Mobile · Giáo dục</span><span class="badge" style="color:#0f6e56">★ 4.8 · 1K+</span></div>
+        <h4>AU-EU Youth Voices Lab</h4>
+        <p data-vi="Ứng dụng cho giới trẻ Âu – Phi rèn kỹ năng vận động chính sách, kết nối và học tập. Đạt 4.8★ với 1.000+ lượt tải." data-en="An app for African–European youth to build advocacy skills, connect and learn. Rated 4.8★ with 1,000+ downloads.">Ứng dụng cho giới trẻ Âu – Phi rèn kỹ năng vận động chính sách, kết nối và học tập. Đạt 4.8★ với 1.000+ lượt tải.</p>
+        <div class="wtags"><span class="ctag">Mobile</span><span class="ctag" data-vi="Âu – Phi" data-en="Africa–Europe">Âu – Phi</span><span class="ctag">4.8★</span></div>
+        <a class="wlink" href="https://play.google.com/store/apps/details?id=com.aeyvl.app&hl=vi" target="_blank" rel="noopener">Google Play <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="wcard">
+      <div class="wmedia">
+        <img class="ic" src="https://play-lh.googleusercontent.com/EN7pYEhVzz6MoWf2Xo3ki2woBu8ri3YgltwmsaX6kOGfkEptEP-O1-vt7cBErgsY584vuApUaQFY2qw-UWW1=w128" alt="Vocab Alarm" loading="lazy" />
+        <img class="shot" src="https://play-lh.googleusercontent.com/epeGyFFU5UH-MF067vE--ab1KKB4nd0XdUi-xiWNNKQCtWwvu_5HoOKf4-cdTHjjgKIoWcdHRhUGqrM_l4qBRA=h360" alt="Vocab Alarm screenshot" loading="lazy" />
+      </div>
+      <div class="wbody">
+        <div class="wcat"><span data-vi="Mobile · Micro-learning" data-en="Mobile · Micro-learning">Mobile · Micro-learning</span><span class="badge" style="color:#854f0b" data-vi="DỰ ÁN RIÊNG" data-en="INDEPENDENT">DỰ ÁN RIÊNG</span></div>
+        <h4>Vocab Alarm</h4>
+        <p data-vi="App học từ vựng tiếng Anh bằng AI: học 1 phút mỗi ngày qua báo thức, lặp lại ngắt quãng, 10.000+ từ. Dự án độc lập, không thuộc Trainizi." data-en="AI English vocabulary app: learn 1 minute a day via alarms, spaced repetition, 10,000+ words. An independent project, not part of Trainizi.">App học từ vựng tiếng Anh bằng AI: học 1 phút mỗi ngày qua báo thức, lặp lại ngắt quãng, 10.000+ từ. Dự án độc lập, không thuộc Trainizi.</p>
+        <div class="wtags"><span class="ctag">AI</span><span class="ctag">Spaced Repetition</span><span class="ctag">10K+</span></div>
+        <a class="wlink" href="https://play.google.com/store/apps/details?id=com.lazyvocab.app&hl=vi" target="_blank" rel="noopener">Google Play <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="wcard">
+      <a class="wmedia cover" href="https://www.youtube.com/watch?v=b6CaW0r_ckg" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/b6CaW0r_ckg/hqdefault.jpg" alt="Video Bản Sắc" loading="lazy" />
+        <span style="position:absolute;inset:0;display:grid;place-items:center;font-size:1.7rem;color:#fff;background:rgba(10,12,18,.25)">▶</span>
+      </a>
+      <div class="wbody">
+        <div class="wcat"><span data-vi="Web · Quiz nano-learning" data-en="Web · Nano-learning quiz">Web · Quiz nano-learning</span><span class="badge">VTC × BỘ VHTTDL</span></div>
+        <h4 data-vi="Cuộc thi “Bản Sắc”" data-en="“Bản Sắc” contest">Cuộc thi “Bản Sắc”</h4>
+        <p data-vi="Cuộc thi trực tuyến trắc nghiệm nano-learning kỷ niệm 80 năm Ngành Văn hoá. Mình phụ trách UI/UX, logic, tài liệu &amp; QA/QC." data-en="An online nano-learning quiz contest marking 80 years of Vietnam's culture sector. I owned UI/UX, logic, docs &amp; QA/QC.">Cuộc thi trực tuyến trắc nghiệm nano-learning kỷ niệm 80 năm Ngành Văn hoá. Mình phụ trách UI/UX, logic, tài liệu &amp; QA/QC.</p>
+        <div class="wtags"><span class="ctag">Next.js</span><span class="ctag">UI/UX</span><span class="ctag">QA/QC</span></div>
+        <a class="wlink" href="https://bansac.vn/gioi-thieu" target="_blank" rel="noopener">bansac.vn <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="wcard">
+      <div class="wmedia cover" style="background:#f0f1f4"><img src="https://mocchinh.vn/assets/images/home/banners/banner-2.webp" alt="Mộc Chính" loading="lazy" style="object-fit:contain" /></div>
+      <div class="wbody">
+        <div class="wcat"><span data-vi="Web · E-commerce" data-en="Web · E-commerce">Web · E-commerce</span><span class="badge">FULL-STACK</span></div>
+        <h4>Mộc Chính</h4>
+        <p data-vi="Website thương hiệu &amp; bán nguyên liệu Bún Đậu Mắm Tôm / giò chả Ước Lễ. Full-stack React.js + Next.js + Tailwind + Strapi, tối ưu SEO." data-en="Brand &amp; e-commerce site for traditional bún đậu / Ước Lễ giò chả ingredients. Full-stack React.js + Next.js + Tailwind + Strapi, SEO optimized.">Website thương hiệu &amp; bán nguyên liệu Bún Đậu Mắm Tôm / giò chả Ước Lễ. Full-stack React.js + Next.js + Tailwind + Strapi, tối ưu SEO.</p>
+        <div class="wtags"><span class="ctag">Next.js</span><span class="ctag">Strapi</span><span class="ctag">SEO</span></div>
+        <a class="wlink" href="https://mocchinh.vn" target="_blank" rel="noopener">mocchinh.vn <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="wcard">
+      <div class="wmedia"><div style="display:flex;flex-wrap:wrap;gap:7px;justify-content:center;max-width:200px"><span class="ctag">Golang</span><span class="ctag">Flutter</span><span class="ctag">PostgreSQL</span><span class="ctag">WebSocket</span></div></div>
+      <div class="wbody">
+        <div class="wcat"><span data-vi="Hệ thống · POS F&amp;B" data-en="System · F&amp;B POS">Hệ thống · POS F&amp;B</span><span class="badge">REAL-TIME</span></div>
+        <h4 data-vi="POS chuỗi Bún Chả" data-en="Bún Chả chain POS">POS chuỗi Bún Chả</h4>
+        <p data-vi="Hệ thống POS thời gian thực cho chuỗi nhà hàng: gọi món, màn bếp và thanh toán đồng bộ realtime qua socket. Backend Golang + PostgreSQL, app Flutter." data-en="A real-time POS for a restaurant chain: ordering, kitchen display and payment synced live over sockets. Golang + PostgreSQL backend, Flutter app.">Hệ thống POS thời gian thực cho chuỗi nhà hàng: gọi món, màn bếp và thanh toán đồng bộ realtime qua socket. Backend Golang + PostgreSQL, app Flutter.</p>
+        <div class="wtags"><span class="ctag">Golang</span><span class="ctag">Flutter</span><span class="ctag">PostgreSQL</span><span class="ctag">Socket</span></div>
+        <span class="wlink" style="color:var(--ink-3)" data-vi="Ảnh thực tế — bạn upload sau" data-en="Screenshots — upload pending">Ảnh thực tế — bạn upload sau</span>
+      </div>
+    </div>
+
+    <div class="wcard">
+      <div class="wmedia cover"><img src="https://baothuongmai.com/btm//uploads/Dai_dien_Bao_Thuong_Mai_9b72a0b874.jpeg" alt="Báo Thương Mại" loading="lazy" /></div>
+      <div class="wbody">
+        <div class="wcat"><span data-vi="Web + App · Marketplace" data-en="Web + App · Marketplace">Web + App · Marketplace</span><span class="badge">FULL-STACK</span></div>
+        <h4>Báo Thương Mại</h4>
+        <p data-vi="Nền tảng thương mại tuần hoàn: rao vặt, mua bán nông sản &amp; kết nối vận chuyển toàn quốc. Full-stack React.js, React Native, Expo, Next.js, Strapi + custom SEO plugin." data-en="A circular-commerce platform: classifieds, agri trading &amp; nationwide logistics. Full-stack React.js, React Native, Expo, Next.js, Strapi + a custom SEO plugin.">Nền tảng thương mại tuần hoàn: rao vặt, mua bán nông sản &amp; kết nối vận chuyển toàn quốc. Full-stack React.js, React Native, Expo, Next.js, Strapi + custom SEO plugin.</p>
+        <div class="wtags"><span class="ctag">React Native</span><span class="ctag">Next.js</span><span class="ctag">SEO Plugin</span></div>
+        <a class="wlink" href="https://baothuongmai.com" target="_blank" rel="noopener">baothuongmai.com <span>↗</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience" class="wrap">
+  <div class="sec-head reveal">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title" data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</h2>
+    <span class="sec-line"></span>
+  </div>
+  <div class="exp">
+    <div class="exp-row reveal">
+      <div class="exp-when"><span data-vi="11/2025 — Hiện tại" data-en="Nov 2025 — Present">11/2025 — Hiện tại</span><span class="co">Wolffun Game</span></div>
+      <div>
+        <div class="exp-role" data-vi="AI Product Engineer" data-en="AI Product Engineer">AI Product Engineer</div>
+        <div class="exp-body">
+          <ul>
+            <li data-vi="App Flutter với real-time LLM streaming cho hội thoại AI độ trễ thấp." data-en="Flutter app with real-time LLM streaming for low-latency AI conversations.">App Flutter với real-time LLM streaming cho hội thoại AI độ trễ thấp.</li>
+            <li data-vi="Backend cho hành vi AI chủ động, prompt architecture &amp; persona system, contextual memory." data-en="Backend for proactive AI behaviors, prompt architecture &amp; persona systems, contextual memory.">Backend cho hành vi AI chủ động, prompt architecture &amp; persona system, contextual memory.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="exp-row reveal">
+      <div class="exp-when"><span>2022 — 10/2025</span><span class="co">Trainizi</span></div>
+      <div>
+        <div class="exp-role" data-vi="Product Engineer" data-en="Product Engineer">Product Engineer</div>
+        <div class="exp-body">
+          <ul>
+            <li data-vi="Dẫn dắt FE Web (Next.js) + Mobile (React Native); xây Creator Platform &amp; LXP." data-en="Led FE for Web (Next.js) + Mobile (React Native); built Creator Platform &amp; LXP.">Dẫn dắt FE Web (Next.js) + Mobile (React Native); xây Creator Platform &amp; LXP.</li>
+            <li data-vi="AI Tutor Agent dùng RAG; shared UI library (−30% dev time); tối ưu cho 1,000+ learner." data-en="RAG-powered AI Tutor Agent; shared UI library (−30% dev time); optimized for 1,000+ learners.">AI Tutor Agent dùng RAG; shared UI library (−30% dev time); tối ưu cho 1,000+ learner.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="exp-row reveal">
+      <div class="exp-when"><span>2019 — 2022</span><span class="co">Snapgo · Perth, AU</span></div>
+      <div>
+        <div class="exp-role" data-vi="Frontend Developer" data-en="Frontend Developer">Frontend Developer</div>
+        <div class="exp-body">
+          <ul>
+            <li data-vi="Tính năng mobile theo vị trí (React Native); tối ưu Google Maps đạt 60fps với dữ liệu lớn." data-en="Location-based mobile features (React Native); optimized Google Maps to 60fps with large datasets.">Tính năng mobile theo vị trí (React Native); tối ưu Google Maps đạt 60fps với dữ liệu lớn.</li>
+            <li data-vi="CMS nội bộ bằng Strapi + React + Ant Design để quản lý chiến dịch &amp; khuyến mãi." data-en="Internal CMS with Strapi + React + Ant Design for campaigns &amp; promotions.">CMS nội bộ bằng Strapi + React + Ant Design để quản lý chiến dịch &amp; khuyến mãi.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="exp-row reveal">
+      <div class="exp-when"><span>2018 — 2019</span><span class="co">PMAX</span></div>
+      <div>
+        <div class="exp-role" data-vi="Frontend Developer" data-en="Frontend Developer">Frontend Developer</div>
+        <div class="exp-body">
+          <ul>
+            <li data-vi="Dashboard báo cáo media (React.js) hợp nhất dữ liệu từ Google, Facebook, TikTok." data-en="Media reporting dashboard (React.js) unifying data from Google, Facebook, TikTok.">Dashboard báo cáo media (React.js) hợp nhất dữ liệu từ Google, Facebook, TikTok.</li>
+            <li data-vi="Chuẩn hoá pipeline dữ liệu marketing; FE trong hệ thống microservices quy mô lớn." data-en="Standardized marketing data pipelines; FE within a large-scale microservices system.">Chuẩn hoá pipeline dữ liệu marketing; FE trong hệ thống microservices quy mô lớn.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- stack -->
+  <h3 style="font-family:'JetBrains Mono';font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--blue);margin:54px 0 0" data-vi="TECH STACK" data-en="TECH STACK">TECH STACK</h3>
+  <div class="stack-grid reveal">
+    <div class="stack-col">
+      <h4>FRONTEND</h4>
+      <div class="items"><span>React.js</span><span>Next.js</span><span>React Native</span><span>Flutter</span><span>TypeScript</span><span>Redux Toolkit</span><span>TailwindCSS</span><span>Design Systems</span></div>
+    </div>
+    <div class="stack-col">
+      <h4>BACKEND · DEVOPS</h4>
+      <div class="items"><span>Node.js</span><span>NestJS</span><span>FastAPI</span><span>Golang</span><span>Strapi</span><span>PostgreSQL</span><span>MongoDB</span><span>WebSocket</span><span>Docker</span><span>CI/CD</span><span>Azure</span><span>GCP</span></div>
+    </div>
+    <div class="stack-col">
+      <h4>AI · LLM</h4>
+      <div class="items"><span>AI Agents</span><span>RAG Pipelines</span><span>LLM Streaming</span><span>Prompt Architecture</span><span>Persona Systems</span><span>Google ADK</span><span>Agno</span></div>
+    </div>
+    <div class="stack-col">
+      <h4 data-vi="MOBILE · DESIGN · PRODUCT" data-en="MOBILE · DESIGN · PRODUCT">MOBILE · DESIGN · PRODUCT</h4>
+      <div class="items"><span>Expo</span><span>Offline-first</span><span>App Store / Google Play</span><span>Figma</span><span>User Journey</span><span>QA / QC</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal">05 — <span data-vi="LIÊN HỆ" data-en="CONTACT">LIÊN HỆ</span></div>
+    <h2 class="reveal" data-vi="Cùng xây<br><span class='hl'>sản phẩm tiếp theo?</span>" data-en="Let's build<br><span class='hl'>the next product?</span>">Cùng xây<br><span class="hl">sản phẩm tiếp theo?</span></h2>
+    <div class="contact-rows reveal">
+      <a class="crow" href="mailto:sonhoai272@gmail.com">
+        <span class="ck">EMAIL</span><span class="cv">sonhoai272@gmail.com</span>
+        <span class="cgo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+      </a>
+      <a class="crow" href="tel:+84985806645">
+        <span class="ck" data-vi="ĐIỆN THOẠI" data-en="PHONE">ĐIỆN THOẠI</span><span class="cv">+84 985 806 645</span>
+        <span class="cgo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+      </a>
+      <a class="crow" href="https://www.linkedin.com/in/sonhoaing" target="_blank" rel="noopener">
+        <span class="ck">LINKEDIN</span><span class="cv">in/sonhoaing</span>
+        <span class="cgo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+      </a>
+      <div class="crow">
+        <span class="ck" data-vi="ĐỊA ĐIỂM" data-en="LOCATION">ĐỊA ĐIỂM</span><span class="cv" data-vi="Long Bình, TP. Hồ Chí Minh" data-en="Long Binh, Ho Chi Minh City">Long Bình, TP. Hồ Chí Minh</span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 NGUYỄN HOÀI SƠN</span>
+  <span>PRODUCT ENGINEER — FE · BE · SYSTEMS · AI AGENTS</span>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-'+lang+']').forEach(function(el){
+      el.innerHTML = el.getAttribute('data-'+lang);
+    });
+    document.getElementById('vi-btn').classList.toggle('on', lang==='vi');
+    document.getElementById('en-btn').classList.toggle('on', lang==='en');
+    try{ localStorage.setItem('pf_lang', lang); }catch(e){}
+  }
+  (function(){
+    var saved='vi';
+    try{ saved = localStorage.getItem('pf_lang') || 'vi'; }catch(e){}
+    if(saved==='en') setLang('en');
+  })();
+
+  // close mobile menu on link click
+  document.getElementById('navlinks').addEventListener('click', function(e){
+    if(e.target.closest('a')) this.classList.remove('open');
+  });
+
+  // reveal on scroll
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // active nav highlight
+  var secs = document.querySelectorAll('section[id], header#top');
+  var navA = document.querySelectorAll('.nav-links a');
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var id = e.target.id;
+        navA.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')==='#'+id); });
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('section[id]').forEach(function(s){ spy.observe(s); });
+</script>
+</body>
+</html>
