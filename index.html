@@ -43,7 +43,7 @@
   ::selection{background:var(--blue);color:#fff}
   .mono{font-family:'JetBrains Mono',monospace}
   .display{font-family:'Montserrat',sans-serif;letter-spacing:-.02em;line-height:.98}
-  h1,h2,h3{font-family:'Montserrat',sans-serif;letter-spacing:-.02em;line-height:1}
+  h1,h2,h3{font-family:'Montserrat',sans-serif;letter-spacing:-.02em;line-height:1;overflow-wrap:break-word}
 
   .wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
   .rule{height:1px;background:var(--line);width:100%}
@@ -195,6 +195,12 @@
   .stack-col h4{font-family:'JetBrains Mono';font-size:.74rem;font-weight:700;letter-spacing:.06em;color:var(--blue);margin-bottom:14px}
   .stack-col .items{display:flex;flex-wrap:wrap;gap:8px}
   .stack-col .items span{font-size:.86rem;color:var(--ink);border:1px solid var(--line);background:#fff;border-radius:7px;padding:6px 11px}
+  .logo-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));border-top:1px solid var(--divider);border-left:1px solid var(--line)}
+  .lg{display:flex;align-items:center;gap:10px;padding:15px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+  .lg img{width:24px;height:24px;object-fit:contain;flex-shrink:0}
+  .lg span{font-size:.8rem;font-weight:500;color:var(--ink-2);line-height:1.25}
+  .stack-cap{margin-top:16px;font-family:'JetBrains Mono';font-size:.72rem;color:var(--ink-3);line-height:1.8}
+  .stack-cap b{color:var(--blue);font-weight:700}
 
   /* ---------- contact ---------- */
   .contact{background:var(--ink);color:var(--paper);margin-top:0}
@@ -331,6 +337,30 @@
   .wlink{margin-top:auto;font-family:'JetBrains Mono';font-size:.72rem;font-weight:500;color:var(--blue);display:inline-flex;align-items:center;gap:6px;align-self:flex-start}
   .wlink:hover{text-decoration:underline}
 
+  /* ===== mobile ===== */
+  @media(max-width:560px){
+    .mark{font-size:.72rem;gap:8px}
+    .mark .sq{width:24px;height:24px}
+    .hero{padding-top:36px}
+    .hero h1{font-size:clamp(2rem,8.5vw,2.7rem);letter-spacing:-.02em;line-height:1.08}
+    .hero-cta{width:100%}
+    .hero-cta .btn{flex:1;justify-content:center}
+    .hero-lead{font-size:1rem}
+    .sec-title{font-size:1.55rem}
+    .sol-intro{font-size:1.25rem}
+    .case h3{font-size:1.45rem}
+    .case-idx,.case-meta{font-size:.64rem}
+    .case-meta{text-align:left}
+    .stat-row .sn{font-size:1.1rem}
+    .metrics .n{font-size:1.7rem}
+    .contact h2{font-size:2rem}
+    .cap-row h3{font-size:1.2rem}
+    .phase h3{font-size:1.25rem}
+    .lg{padding:13px 12px}
+    .lg span{font-size:.75rem}
+    .wbody{padding:16px 16px 18px}
+  }
+
   /* reveal */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
@@ -375,7 +405,7 @@
   <h1 class="reveal" data-vi="Xây sản phẩm số từ <span class='hl'>ý tưởng</span> đến <span class='hl'>vận hành</span>." data-en="I build digital products from <span class='hl'>idea</span> to <span class='hl'>production</span>.">Xây sản phẩm số từ <span class="hl">ý tưởng</span> đến <span class="hl">vận hành</span>.</h1>
   <div class="hero-grid reveal">
     <div>
-      <p class="hero-lead" data-vi="<b>6+ năm</b> xây dựng Web &amp; Mobile cho thị trường quốc tế — Âu, Phi, Úc, Việt Nam. Tự đảm nhận trọn vòng đời: <b>thiết kế UI/UX → Frontend → Backend → hệ thống → AI &amp; Agent → triển khai.</b>" data-en="<b>6+ years</b> building Web &amp; Mobile for international markets — Europe, Africa, Australia, Vietnam. End-to-end ownership: <b>UI/UX design → Frontend → Backend → systems → AI &amp; Agents → deployment.</b>"><b>6+ năm</b> xây dựng Web &amp; Mobile cho thị trường quốc tế — Âu, Phi, Úc, Việt Nam. Tự đảm nhận trọn vòng đời: <b>thiết kế UI/UX → Frontend → Backend → hệ thống → AI &amp; Agent → triển khai.</b></p>
+      <p class="hero-lead" data-vi="<b>6+ năm</b> xây sản phẩm Web &amp; Mobile cho thị trường quốc tế. Đảm nhận trọn vòng đời: <b>UI/UX → Frontend → Backend → AI → triển khai.</b>" data-en="<b>6+ years</b> building Web &amp; Mobile for international markets. Full ownership: <b>UI/UX → Frontend → Backend → AI → deployment.</b>"><b>6+ năm</b> xây sản phẩm Web &amp; Mobile cho thị trường quốc tế. Đảm nhận trọn vòng đời: <b>UI/UX → Frontend → Backend → AI → triển khai.</b></p>
       <div class="hero-cta">
         <a href="#work" class="btn solid"><span data-vi="Xem dự án" data-en="View work">Xem dự án</span> <span class="arr">↗</span></a>
         <a href="#contact" class="btn line"><span data-vi="Liên hệ" data-en="Get in touch">Liên hệ</span></a>
@@ -391,9 +421,9 @@
 <div class="wrap">
   <div class="metrics reveal">
     <div class="m"><div class="n">6<span class="u">+</span></div><div class="l" data-vi="NĂM KINH NGHIỆM" data-en="YEARS EXPERIENCE">NĂM KINH NGHIỆM</div></div>
-    <div class="m"><div class="n">10<span class="u">+</span></div><div class="l" data-vi="SẢN PHẨM ĐÃ SHIP" data-en="PRODUCTS SHIPPED">SẢN PHẨM ĐÃ SHIP</div></div>
+    <div class="m"><div class="n">10<span class="u">+</span></div><div class="l" data-vi="SẢN PHẨM ĐÃ RA MẮT" data-en="PRODUCTS SHIPPED">SẢN PHẨM ĐÃ RA MẮT</div></div>
     <div class="m"><div class="n">4</div><div class="l" data-vi="CHÂU LỤC PHỤC VỤ" data-en="CONTINENTS SERVED">CHÂU LỤC PHỤC VỤ</div></div>
-    <div class="m"><div class="n">1K<span class="u">+</span></div><div class="l" data-vi="NGƯỜI HỌC ĐỒNG THỜI" data-en="CONCURRENT LEARNERS">NGƯỜI HỌC ĐỒNG THỜI</div></div>
+    <div class="m"><div class="n">15K<span class="u">+</span></div><div class="l" data-vi="NGƯỜI HỌC TRAINIZI" data-en="TRAINIZI LEARNERS">NGƯỜI HỌC TRAINIZI</div></div>
   </div>
 </div>
 
@@ -404,7 +434,7 @@
     <h2 class="sec-title" data-vi="Giải pháp đào tạo" data-en="The training solution">Giải pháp đào tạo</h2>
     <span class="sec-line"></span>
   </div>
-  <p class="sol-intro reveal" data-vi="Mình xây trọn vòng lặp học tập số: <span class='hl'>Tạo → Học → Phân tích</span>. Một hệ thống khép kín — dữ liệu mỗi vòng học quay lại làm nội dung tốt hơn." data-en="I build the full digital learning loop: <span class='hl'>Create → Learn → Analytics</span>. A closed system — data from each cycle feeds back to make content better.">Mình xây trọn vòng lặp học tập số: <span class="hl">Tạo → Học → Phân tích</span>. Một hệ thống khép kín — dữ liệu mỗi vòng học quay lại làm nội dung tốt hơn.</p>
+  <p class="sol-intro reveal" data-vi="Trọn vòng lặp học tập số: <span class='hl'>Tạo → Học → Phân tích</span> — khép kín, tự cải thiện." data-en="The full learning loop: <span class='hl'>Create → Learn → Analytics</span> — closed and self-improving.">Trọn vòng lặp học tập số: <span class="hl">Tạo → Học → Phân tích</span> — khép kín, tự cải thiện.</p>
 
   <div class="loop reveal">
     <div class="phase">
@@ -413,7 +443,7 @@
         <div class="pico"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M14 6l4 4"/></svg></div>
         <h3 data-vi="Tạo" data-en="Create">Tạo</h3>
       </div>
-      <div class="pd" data-vi="Creator Platform: lesson builder kéo-thả, nội dung media-rich và ngân hàng câu hỏi trắc nghiệm nano." data-en="Creator Platform: drag-and-drop lesson builder, media-rich content and a nano quiz bank.">Creator Platform: lesson builder kéo-thả, nội dung media-rich và ngân hàng câu hỏi trắc nghiệm nano.</div>
+      <div class="pd" data-vi="Lesson builder kéo-thả, nội dung media-rich, ngân hàng quiz nano." data-en="Drag-and-drop lesson builder, media-rich content, nano quiz bank.">Lesson builder kéo-thả, nội dung media-rich, ngân hàng quiz nano.</div>
       <div class="pvis">
         <div class="builder">
           <div class="blk"><span class="d" style="background:#2563eb"></span> TEXT BLOCK</div>
@@ -430,7 +460,7 @@
         <div class="pico"><svg viewBox="0 0 24 24"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M7 10v5c0 1 2.2 2.2 5 2.2s5-1.2 5-2.2v-5"/></svg></div>
         <h3 data-vi="Học" data-en="Learn">Học</h3>
       </div>
-      <div class="pd" data-vi="Bài nano &amp; micro trên mobile: trắc nghiệm, streak, gamification — học 1 phút mỗi ngày, mượt cả khi offline." data-en="Nano &amp; micro lessons on mobile: quizzes, streaks, gamification — learn 1 minute a day, smooth even offline.">Bài nano &amp; micro trên mobile: trắc nghiệm, streak, gamification — học 1 phút mỗi ngày, mượt cả khi offline.</div>
+      <div class="pd" data-vi="Bài nano/micro: quiz, streak, gamification — 1 phút/ngày, chạy offline." data-en="Nano/micro lessons: quizzes, streaks, gamification — 1 min/day, offline.">Bài nano/micro: quiz, streak, gamification — 1 phút/ngày, chạy offline.</div>
       <div class="pvis">
         <div style="width:100%;max-width:150px;display:grid;gap:8px">
           <div class="mono" style="font-size:.56rem;color:var(--ink-3);text-align:center;letter-spacing:.06em" data-vi="CÂU HỎI 1 / 10" data-en="QUESTION 1 / 10">CÂU HỎI 1 / 10</div>
@@ -447,19 +477,19 @@
         <div class="pico"><svg viewBox="0 0 24 24"><path d="M4 19V11M9 19V5M14 19v-6M19 19v-9"/><path d="M3 21h18"/></svg></div>
         <h3 data-vi="Phân tích" data-en="Analytics">Phân tích</h3>
       </div>
-      <div class="pd" data-vi="Dashboard tiến độ, tỉ lệ hoàn thành, lỗ hổng kỹ năng và leaderboard — AI Tutor dùng dữ liệu này để cá nhân hoá." data-en="Dashboards for progress, completion, skill gaps and leaderboards — the AI Tutor uses this data to personalize.">Dashboard tiến độ, tỉ lệ hoàn thành, lỗ hổng kỹ năng và leaderboard — AI Tutor dùng dữ liệu này để cá nhân hoá.</div>
+      <div class="pd" data-vi="Tiến độ, tỉ lệ hoàn thành, lỗ hổng kỹ năng — AI Tutor cá nhân hoá từ đó." data-en="Progress, completion, skill gaps — the AI Tutor personalizes from this.">Tiến độ, tỉ lệ hoàn thành, lỗ hổng kỹ năng — AI Tutor cá nhân hoá từ đó.</div>
       <div class="pvis">
         <div class="mini-an">
           <div class="bars"><span style="height:45%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:88%"></span><span style="height:62%"></span><span style="height:95%"></span></div>
           <div class="rings">
             <div class="stat"><b>95<span class="u">%</span></b><span data-vi="HOÀN THÀNH" data-en="COMPLETION">HOÀN THÀNH</span></div>
-            <div class="stat"><b>1K<span class="u">+</span></b><span data-vi="HỌC VIÊN" data-en="LEARNERS">HỌC VIÊN</span></div>
+            <div class="stat"><b>15K<span class="u">+</span></b><span data-vi="HỌC VIÊN" data-en="LEARNERS">HỌC VIÊN</span></div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="loop-note"><span class="lt">↻</span> <span data-vi="Vòng lặp khép kín — mình đảm nhận từ thiết kế UI/UX, frontend, backend đến AI Agent ở cả ba pha." data-en="A closed loop — I own UI/UX, frontend, backend and the AI Agent across all three phases.">Vòng lặp khép kín — mình đảm nhận từ thiết kế UI/UX, frontend, backend đến AI Agent ở cả ba pha.</span></div>
+  <div class="loop-note"><span class="lt">↻</span> <span data-vi="Khép kín — đảm nhận toàn bộ UI/UX, frontend, backend và AI Agent." data-en="Closed loop — full ownership of UI/UX, frontend, backend and the AI agent.">Khép kín — đảm nhận toàn bộ UI/UX, frontend, backend và AI Agent.</span></div>
 </section>
 
 <!-- ===================== CAPABILITIES ===================== -->
@@ -475,7 +505,7 @@
       <div class="ci">01</div>
       <h3 data-vi="Product, UI/UX &amp; Research" data-en="Product, UI/UX &amp; Research">Product, UI/UX &amp; Research</h3>
       <div>
-        <div class="cd" data-vi="Nghiên cứu người dùng, thiết kế UI/UX và phân tích nghiệp vụ. Vẽ user journey, dựng prototype trên Figma và đảm bảo chất lượng QA/QC — biến insight thành sản phẩm đo được." data-en="User research, UI/UX design and business analysis. User journey mapping, Figma prototyping and QA/QC — turning insight into measurable products.">Nghiên cứu người dùng, thiết kế UI/UX và phân tích nghiệp vụ. Vẽ user journey, dựng prototype trên Figma và đảm bảo chất lượng QA/QC — biến insight thành sản phẩm đo được.</div>
+        <div class="cd" data-vi="Nghiên cứu người dùng, UI/UX, BA &amp; QA/QC." data-en="User research, UI/UX, BA &amp; QA/QC.">Nghiên cứu người dùng, UI/UX, BA &amp; QA/QC.</div>
         <div class="ctags"><span class="ctag">UX Research</span><span class="ctag">UI/UX Design</span><span class="ctag">Figma</span><span class="ctag">User Journey</span><span class="ctag">Business Analysis</span><span class="ctag">QA / QC</span><span class="ctag">Analytics</span></div>
       </div>
     </div>
@@ -483,7 +513,7 @@
       <div class="ci">02</div>
       <h3 data-vi="Frontend &amp; Mobile" data-en="Frontend &amp; Mobile">Frontend &amp; Mobile</h3>
       <div>
-        <div class="cd" data-vi="Kiến trúc frontend &amp; mobile hiệu năng cao và design system tái sử dụng. Tối ưu render cho hàng nghìn người dùng đồng thời; phát hành app B2C/B2B lên App Store &amp; Google Play." data-en="High-performance frontend &amp; mobile architecture and reusable design systems. Render-optimized for thousands of concurrent users; shipping B2C/B2B apps to the App Store &amp; Google Play.">Kiến trúc frontend &amp; mobile hiệu năng cao và design system tái sử dụng. Tối ưu render cho hàng nghìn người dùng đồng thời; phát hành app B2C/B2B lên App Store &amp; Google Play.</div>
+        <div class="cd" data-vi="Frontend &amp; app đa nền tảng, hiệu năng cao." data-en="High-performance cross-platform frontend &amp; apps.">Frontend &amp; app đa nền tảng, hiệu năng cao.</div>
         <div class="ctags"><span class="ctag">React.js</span><span class="ctag">Next.js</span><span class="ctag">React Native</span><span class="ctag">Flutter</span><span class="ctag">TypeScript</span><span class="ctag">TailwindCSS</span><span class="ctag">Design Systems</span></div>
       </div>
     </div>
@@ -491,7 +521,7 @@
       <div class="ci">03</div>
       <h3 data-vi="Backend &amp; Hệ thống" data-en="Backend &amp; Systems">Backend &amp; Hệ thống</h3>
       <div>
-        <div class="cd" data-vi="Thiết kế logic backend, API và hệ thống thời gian thực. Database, container hoá, CI/CD và triển khai cloud cho quy mô lớn." data-en="Backend logic, APIs and real-time systems. Databases, containerization, CI/CD and cloud deployment at scale.">Thiết kế logic backend, API và hệ thống thời gian thực. Database, container hoá, CI/CD và triển khai cloud cho quy mô lớn.</div>
+        <div class="cd" data-vi="API, hệ thống real-time, database &amp; cloud." data-en="APIs, real-time systems, databases &amp; cloud.">API, hệ thống real-time, database &amp; cloud.</div>
         <div class="ctags"><span class="ctag">Node.js</span><span class="ctag">NestJS</span><span class="ctag">FastAPI</span><span class="ctag">Golang</span><span class="ctag">PostgreSQL</span><span class="ctag">MongoDB</span><span class="ctag">Docker</span><span class="ctag">CI/CD</span><span class="ctag">Azure / GCP</span><span class="ctag">WebSocket</span></div>
       </div>
     </div>
@@ -499,7 +529,7 @@
       <div class="ci">04</div>
       <h3 data-vi="AI &amp; Agents" data-en="AI &amp; Agents">AI &amp; Agents</h3>
       <div>
-        <div class="cd" data-vi="Xây AI Agent end-to-end: RAG pipeline, real-time LLM streaming, prompt architecture và persona system cho sản phẩm AI chạy thật." data-en="End-to-end AI Agents: RAG pipelines, real-time LLM streaming, prompt architecture and persona systems for production AI.">Xây AI Agent end-to-end: RAG pipeline, real-time LLM streaming, prompt architecture và persona system cho sản phẩm AI chạy thật.</div>
+        <div class="cd" data-vi="AI Agent end-to-end: RAG, LLM streaming, prompt engineering." data-en="End-to-end AI agents: RAG, LLM streaming, prompt engineering.">AI Agent end-to-end: RAG, LLM streaming, prompt engineering.</div>
         <div class="ctags"><span class="ctag">AI Agents</span><span class="ctag">RAG</span><span class="ctag">LLM Streaming</span><span class="ctag">Prompt Architecture</span><span class="ctag">Google ADK</span><span class="ctag">Agno</span></div>
       </div>
     </div>
@@ -522,14 +552,9 @@
     </div>
     <h3 data-vi="Nền tảng microlearning AI cho doanh nghiệp" data-en="AI microlearning platform for enterprise">Nền tảng microlearning AI cho doanh nghiệp</h3>
     <p class="tagline" data-vi="Đào tạo lực lượng lao động quy mô lớn qua mobile — giải pháp AI #1 ASEAN, được Tuổi Trẻ, Thanh Niên và Naver đưa tin." data-en="Training large workforces via mobile — the #1 AI solution in ASEAN, featured by Tuoi Tre, Thanh Nien and Naver.">Đào tạo lực lượng lao động quy mô lớn qua mobile — giải pháp AI #1 ASEAN, được Tuổi Trẻ, Thanh Niên và Naver đưa tin.</p>
-    <div class="pai">
-      <div class="col"><div class="lab" data-vi="VẤN ĐỀ" data-en="PROBLEM">VẤN ĐỀ</div><p data-vi="Doanh nghiệp ở Phi, Âu, Việt Nam cần đào tạo hàng nghìn nhân sự qua điện thoại, trên mạng yếu, với nội dung phải hợp văn hoá từng vùng." data-en="Enterprises across Africa, Europe and Vietnam needed to train thousands of staff via phone, on weak networks, with culturally-localized content.">Doanh nghiệp ở Phi, Âu, Việt Nam cần đào tạo hàng nghìn nhân sự qua điện thoại, trên mạng yếu, với nội dung phải hợp văn hoá từng vùng.</p></div>
-      <div class="col"><div class="lab" data-vi="GIẢI PHÁP" data-en="APPROACH">GIẢI PHÁP</div><p data-vi="Dẫn dắt kiến trúc FE Web (Next.js) + Mobile (React Native). Xây Creator Platform (lesson builder, analytics, CMS) và LXP. Ra mắt AI Tutor Agent dùng RAG để cá nhân hoá và chỉ ra lỗ hổng kỹ năng." data-en="Led FE architecture for Web (Next.js) + Mobile (React Native). Built the Creator Platform (lesson builder, analytics, CMS) and LXP. Launched a RAG-powered AI Tutor Agent for personalization and skill-gap guidance.">Dẫn dắt kiến trúc FE Web (Next.js) + Mobile (React Native). Xây Creator Platform (lesson builder, analytics, CMS) và LXP. Ra mắt AI Tutor Agent dùng RAG để cá nhân hoá và chỉ ra lỗ hổng kỹ năng.</p></div>
-      <div class="col"><div class="lab" data-vi="KẾT QUẢ" data-en="IMPACT">KẾT QUẢ</div><p data-vi="Shared UI library giảm ~30% thời gian phát triển. Hệ thống gánh 1,000+ người học đồng thời. Bài học media-rich đạt tỉ lệ hoàn thành 95%." data-en="A shared UI library cut dev time ~30%. The system handled 1,000+ concurrent learners. Media-rich lessons reached 95% completion.">Shared UI library giảm ~30% thời gian phát triển. Hệ thống gánh 1,000+ người học đồng thời. Bài học media-rich đạt tỉ lệ hoàn thành 95%.</p></div>
-    </div>
     <div class="stat-row">
       <div class="s"><div class="sn">−30<span class="u">%</span></div><div class="sl" data-vi="THỜI GIAN DEV" data-en="DEV TIME">THỜI GIAN DEV</div></div>
-      <div class="s"><div class="sn">1K<span class="u">+</span></div><div class="sl" data-vi="LEARNER ĐỒNG THỜI" data-en="CONCURRENT LEARNERS">LEARNER ĐỒNG THỜI</div></div>
+      <div class="s"><div class="sn">15K<span class="u">+</span></div><div class="sl" data-vi="NGƯỜI HỌC" data-en="USERS / LEARNERS">NGƯỜI HỌC</div></div>
       <div class="s"><div class="sn">95<span class="u">%</span></div><div class="sl" data-vi="TỈ LỆ HOÀN THÀNH" data-en="COMPLETION RATE">TỈ LỆ HOÀN THÀNH</div></div>
       <div class="s"><div class="sn">#1</div><div class="sl" data-vi="AI ASEAN" data-en="AI IN ASEAN">AI ASEAN</div></div>
     </div>
@@ -546,12 +571,7 @@
       <span class="case-meta" data-vi="AI Product Engineer · 2025–nay · Flutter · LLM · Real-time" data-en="AI Product Engineer · 2025–now · Flutter · LLM · Real-time">AI Product Engineer · 2025–nay · Flutter · LLM · Real-time</span>
     </div>
     <h3 data-vi="AI Soulmate Companion — bạn đồng hành cảm xúc" data-en="AI Soulmate Companion — emotional AI">AI Soulmate Companion — bạn đồng hành cảm xúc</h3>
-    <p class="tagline" data-vi="Một người bạn AI tập trung vào tương tác cảm xúc và hội thoại cá nhân hoá theo thời gian thực." data-en="An AI companion focused on emotional interaction and personalized, real-time conversations.">Một người bạn AI tập trung vào tương tác cảm xúc và hội thoại cá nhân hoá theo thời gian thực.</p>
-    <div class="pai">
-      <div class="col"><div class="lab" data-vi="VẤN ĐỀ" data-en="PROBLEM">VẤN ĐỀ</div><p data-vi="Bạn đồng hành AI phải phản hồi tức thì, giữ tính cách nhất quán và nhớ ngữ cảnh qua những cuộc trò chuyện dài hàng tuần." data-en="An AI companion must respond instantly, keep a consistent personality and remember context across conversations spanning weeks.">Bạn đồng hành AI phải phản hồi tức thì, giữ tính cách nhất quán và nhớ ngữ cảnh qua những cuộc trò chuyện dài hàng tuần.</p></div>
-      <div class="col"><div class="lab" data-vi="GIẢI PHÁP" data-en="APPROACH">GIẢI PHÁP</div><p data-vi="Xây app Flutter với real-time LLM streaming độ trễ thấp. Thiết kế backend cho hành vi AI chủ động dựa trên lịch sử người dùng, cùng prompt architecture &amp; persona system." data-en="Built a Flutter app with low-latency real-time LLM streaming. Designed backend for proactive AI behaviors based on user history, plus prompt architecture &amp; persona systems.">Xây app Flutter với real-time LLM streaming độ trễ thấp. Thiết kế backend cho hành vi AI chủ động dựa trên lịch sử người dùng, cùng prompt architecture &amp; persona system.</p></div>
-      <div class="col"><div class="lab" data-vi="KẾT QUẢ" data-en="IMPACT">KẾT QUẢ</div><p data-vi="Hội thoại AI mượt, độ trễ thấp; tính cách nhất quán xuyên suốt; xử lý long-form dialogue với bộ nhớ ngữ cảnh dài hạn." data-en="Smooth, low-latency AI conversations; consistent personality throughout; long-form dialogue with persistent contextual memory.">Hội thoại AI mượt, độ trễ thấp; tính cách nhất quán xuyên suốt; xử lý long-form dialogue với bộ nhớ ngữ cảnh dài hạn.</p></div>
-    </div>
+    <p class="tagline" data-vi="Bạn đồng hành AI tập trung vào tương tác cảm xúc và hội thoại cá nhân hoá theo thời gian thực." data-en="An AI companion focused on emotional interaction and personalized, real-time conversations.">Bạn đồng hành AI tập trung vào tương tác cảm xúc và hội thoại cá nhân hoá theo thời gian thực.</p>
     <div class="stat-row">
       <div class="s"><div class="sn" data-vi="Thời gian thực" data-en="Real-time">Thời gian thực</div><div class="sl" data-vi="LLM STREAMING" data-en="LLM STREAMING">LLM STREAMING</div></div>
       <div class="s"><div class="sn" data-vi="Chủ động" data-en="Proactive">Chủ động</div><div class="sl" data-vi="HÀNH VI AI" data-en="AI BEHAVIOR">HÀNH VI AI</div></div>
@@ -575,7 +595,7 @@
       <div class="wbody">
         <div class="wcat"><span data-vi="Mobile · Nano-learning" data-en="Mobile · Nano-learning">Mobile · Nano-learning</span><span class="badge" style="color:var(--blue)">WHITE-LABEL TRAINIZI</span></div>
         <h4>VTCiZi</h4>
-        <p data-vi="App đào tạo nội bộ Nanolearning + AI (VTC × Trainizi). Mình thiết kế UI/UX và code, phát hành lên Google Play." data-en="Internal Nanolearning + AI training app (VTC × Trainizi). I designed the UI/UX and built it, published to Google Play.">App đào tạo nội bộ Nanolearning + AI (VTC × Trainizi). Mình thiết kế UI/UX và code, phát hành lên Google Play.</p>
+        <p data-vi="Ứng dụng đào tạo nội bộ theo phương pháp nanolearning và AI. Đảm nhận thiết kế UI/UX và phát triển sản phẩm." data-en="Internal corporate training app built on nanolearning and AI. Owned UI/UX design and product development.">Ứng dụng đào tạo nội bộ theo phương pháp nanolearning và AI. Đảm nhận thiết kế UI/UX và phát triển sản phẩm.</p>
         <div class="wtags"><span class="ctag">Flutter</span><span class="ctag">Nanolearning</span><span class="ctag">AI</span></div>
         <a class="wlink" href="https://play.google.com/store/apps/details?id=com.vtcizi.app&hl=vi" target="_blank" rel="noopener">Google Play <span>↗</span></a>
       </div>
@@ -589,7 +609,7 @@
       <div class="wbody">
         <div class="wcat"><span data-vi="Mobile · Giáo dục" data-en="Mobile · Education">Mobile · Giáo dục</span><span class="badge" style="color:#0f6e56">★ 4.8 · 1K+</span></div>
         <h4>AU-EU Youth Voices Lab</h4>
-        <p data-vi="Ứng dụng cho giới trẻ Âu – Phi rèn kỹ năng vận động chính sách, kết nối và học tập. Đạt 4.8★ với 1.000+ lượt tải." data-en="An app for African–European youth to build advocacy skills, connect and learn. Rated 4.8★ with 1,000+ downloads.">Ứng dụng cho giới trẻ Âu – Phi rèn kỹ năng vận động chính sách, kết nối và học tập. Đạt 4.8★ với 1.000+ lượt tải.</p>
+        <p data-vi="Ứng dụng cho giới trẻ Âu–Phi: rèn kỹ năng vận động chính sách, kết nối và học tập. 4.8★ · 1.000+ lượt tải." data-en="App for African–European youth: policy advocacy skills, networking and learning. 4.8★ · 1,000+ downloads.">Ứng dụng cho giới trẻ Âu–Phi: rèn kỹ năng vận động chính sách, kết nối và học tập. 4.8★ · 1.000+ lượt tải.</p>
         <div class="wtags"><span class="ctag">Mobile</span><span class="ctag" data-vi="Âu – Phi" data-en="Africa–Europe">Âu – Phi</span><span class="ctag">4.8★</span></div>
         <a class="wlink" href="https://play.google.com/store/apps/details?id=com.aeyvl.app&hl=vi" target="_blank" rel="noopener">Google Play <span>↗</span></a>
       </div>
@@ -601,9 +621,9 @@
         <img class="shot" src="https://play-lh.googleusercontent.com/epeGyFFU5UH-MF067vE--ab1KKB4nd0XdUi-xiWNNKQCtWwvu_5HoOKf4-cdTHjjgKIoWcdHRhUGqrM_l4qBRA=h360" alt="Vocab Alarm screenshot" loading="lazy" />
       </div>
       <div class="wbody">
-        <div class="wcat"><span data-vi="Mobile · Micro-learning" data-en="Mobile · Micro-learning">Mobile · Micro-learning</span><span class="badge" style="color:#854f0b" data-vi="DỰ ÁN RIÊNG" data-en="INDEPENDENT">DỰ ÁN RIÊNG</span></div>
+        <div class="wcat"><span data-vi="Mobile · Micro-learning" data-en="Mobile · Micro-learning">Mobile · Micro-learning</span><span class="badge" style="color:#854f0b">SPACED REPETITION</span></div>
         <h4>Vocab Alarm</h4>
-        <p data-vi="App học từ vựng tiếng Anh bằng AI: học 1 phút mỗi ngày qua báo thức, lặp lại ngắt quãng, 10.000+ từ. Dự án độc lập, không thuộc Trainizi." data-en="AI English vocabulary app: learn 1 minute a day via alarms, spaced repetition, 10,000+ words. An independent project, not part of Trainizi.">App học từ vựng tiếng Anh bằng AI: học 1 phút mỗi ngày qua báo thức, lặp lại ngắt quãng, 10.000+ từ. Dự án độc lập, không thuộc Trainizi.</p>
+        <p data-vi="Ứng dụng học từ vựng tiếng Anh qua báo thức và lặp lại ngắt quãng, hơn 10.000 từ." data-en="English vocabulary app using alarms and spaced repetition, 10,000+ words.">Ứng dụng học từ vựng tiếng Anh qua báo thức và lặp lại ngắt quãng, hơn 10.000 từ.</p>
         <div class="wtags"><span class="ctag">AI</span><span class="ctag">Spaced Repetition</span><span class="ctag">10K+</span></div>
         <a class="wlink" href="https://play.google.com/store/apps/details?id=com.lazyvocab.app&hl=vi" target="_blank" rel="noopener">Google Play <span>↗</span></a>
       </div>
@@ -617,7 +637,7 @@
       <div class="wbody">
         <div class="wcat"><span data-vi="Web · Quiz nano-learning" data-en="Web · Nano-learning quiz">Web · Quiz nano-learning</span><span class="badge">VTC × BỘ VHTTDL</span></div>
         <h4 data-vi="Cuộc thi “Bản Sắc”" data-en="“Bản Sắc” contest">Cuộc thi “Bản Sắc”</h4>
-        <p data-vi="Cuộc thi trực tuyến trắc nghiệm nano-learning kỷ niệm 80 năm Ngành Văn hoá. Mình phụ trách UI/UX, logic, tài liệu &amp; QA/QC." data-en="An online nano-learning quiz contest marking 80 years of Vietnam's culture sector. I owned UI/UX, logic, docs &amp; QA/QC.">Cuộc thi trực tuyến trắc nghiệm nano-learning kỷ niệm 80 năm Ngành Văn hoá. Mình phụ trách UI/UX, logic, tài liệu &amp; QA/QC.</p>
+        <p data-vi="Cuộc thi trắc nghiệm trực tuyến dạng nano-learning, kỷ niệm 80 năm Ngành Văn hoá. Đảm nhận UI/UX, luồng sản phẩm và QA/QC." data-en="Online nano-learning quiz competition marking 80 years of Vietnam's culture sector. Owned UI/UX, product flow and QA/QC.">Cuộc thi trắc nghiệm trực tuyến dạng nano-learning, kỷ niệm 80 năm Ngành Văn hoá. Đảm nhận UI/UX, luồng sản phẩm và QA/QC.</p>
         <div class="wtags"><span class="ctag">Next.js</span><span class="ctag">UI/UX</span><span class="ctag">QA/QC</span></div>
         <a class="wlink" href="https://bansac.vn/gioi-thieu" target="_blank" rel="noopener">bansac.vn <span>↗</span></a>
       </div>
@@ -628,7 +648,7 @@
       <div class="wbody">
         <div class="wcat"><span data-vi="Web · E-commerce" data-en="Web · E-commerce">Web · E-commerce</span><span class="badge">FULL-STACK</span></div>
         <h4>Mộc Chính</h4>
-        <p data-vi="Website thương hiệu &amp; bán nguyên liệu Bún Đậu Mắm Tôm / giò chả Ước Lễ. Full-stack React.js + Next.js + Tailwind + Strapi, tối ưu SEO." data-en="Brand &amp; e-commerce site for traditional bún đậu / Ước Lễ giò chả ingredients. Full-stack React.js + Next.js + Tailwind + Strapi, SEO optimized.">Website thương hiệu &amp; bán nguyên liệu Bún Đậu Mắm Tôm / giò chả Ước Lễ. Full-stack React.js + Next.js + Tailwind + Strapi, tối ưu SEO.</p>
+        <p data-vi="Website thương hiệu &amp; bán nguyên liệu Bún Đậu / giò chả Ước Lễ. Full-stack Next.js + Strapi, tối ưu SEO." data-en="Brand &amp; e-commerce site for bún đậu / Ước Lễ giò chả. Full-stack Next.js + Strapi, SEO-optimized.">Website thương hiệu &amp; bán nguyên liệu Bún Đậu / giò chả Ước Lễ. Full-stack Next.js + Strapi, tối ưu SEO.</p>
         <div class="wtags"><span class="ctag">Next.js</span><span class="ctag">Strapi</span><span class="ctag">SEO</span></div>
         <a class="wlink" href="https://mocchinh.vn" target="_blank" rel="noopener">mocchinh.vn <span>↗</span></a>
       </div>
@@ -639,9 +659,9 @@
       <div class="wbody">
         <div class="wcat"><span data-vi="Hệ thống · POS F&amp;B" data-en="System · F&amp;B POS">Hệ thống · POS F&amp;B</span><span class="badge">REAL-TIME</span></div>
         <h4 data-vi="POS chuỗi Bún Chả" data-en="Bún Chả chain POS">POS chuỗi Bún Chả</h4>
-        <p data-vi="Hệ thống POS thời gian thực cho chuỗi nhà hàng: gọi món, màn bếp và thanh toán đồng bộ realtime qua socket. Backend Golang + PostgreSQL, app Flutter." data-en="A real-time POS for a restaurant chain: ordering, kitchen display and payment synced live over sockets. Golang + PostgreSQL backend, Flutter app.">Hệ thống POS thời gian thực cho chuỗi nhà hàng: gọi món, màn bếp và thanh toán đồng bộ realtime qua socket. Backend Golang + PostgreSQL, app Flutter.</p>
+        <p data-vi="POS real-time cho chuỗi nhà hàng: gọi món, bếp, thanh toán đồng bộ qua socket. Golang + PostgreSQL + Flutter." data-en="Real-time POS for a restaurant chain: ordering, kitchen, payment synced over sockets. Golang + PostgreSQL + Flutter.">POS real-time cho chuỗi nhà hàng: gọi món, bếp, thanh toán đồng bộ qua socket. Golang + PostgreSQL + Flutter.</p>
         <div class="wtags"><span class="ctag">Golang</span><span class="ctag">Flutter</span><span class="ctag">PostgreSQL</span><span class="ctag">Socket</span></div>
-        <span class="wlink" style="color:var(--ink-3)" data-vi="Ảnh thực tế — bạn upload sau" data-en="Screenshots — upload pending">Ảnh thực tế — bạn upload sau</span>
+        <span class="wlink" style="color:var(--ink-3);cursor:default" data-vi="Hệ thống nội bộ" data-en="Internal system">Hệ thống nội bộ</span>
       </div>
     </div>
 
@@ -650,7 +670,7 @@
       <div class="wbody">
         <div class="wcat"><span data-vi="Web + App · Marketplace" data-en="Web + App · Marketplace">Web + App · Marketplace</span><span class="badge">FULL-STACK</span></div>
         <h4>Báo Thương Mại</h4>
-        <p data-vi="Nền tảng thương mại tuần hoàn: rao vặt, mua bán nông sản &amp; kết nối vận chuyển toàn quốc. Full-stack React.js, React Native, Expo, Next.js, Strapi + custom SEO plugin." data-en="A circular-commerce platform: classifieds, agri trading &amp; nationwide logistics. Full-stack React.js, React Native, Expo, Next.js, Strapi + a custom SEO plugin.">Nền tảng thương mại tuần hoàn: rao vặt, mua bán nông sản &amp; kết nối vận chuyển toàn quốc. Full-stack React.js, React Native, Expo, Next.js, Strapi + custom SEO plugin.</p>
+        <p data-vi="Nền tảng thương mại tuần hoàn: rao vặt nông sản &amp; kết nối vận chuyển toàn quốc. Full-stack + custom Strapi SEO plugin." data-en="Circular-commerce platform: agri classifieds &amp; nationwide logistics. Full-stack + custom Strapi SEO plugin.">Nền tảng thương mại tuần hoàn: rao vặt nông sản &amp; kết nối vận chuyển toàn quốc. Full-stack + custom Strapi SEO plugin.</p>
         <div class="wtags"><span class="ctag">React Native</span><span class="ctag">Next.js</span><span class="ctag">SEO Plugin</span></div>
         <a class="wlink" href="https://baothuongmai.com" target="_blank" rel="noopener">baothuongmai.com <span>↗</span></a>
       </div>
@@ -686,7 +706,7 @@
         <div class="exp-body">
           <ul>
             <li data-vi="Dẫn dắt FE Web (Next.js) + Mobile (React Native); xây Creator Platform &amp; LXP." data-en="Led FE for Web (Next.js) + Mobile (React Native); built Creator Platform &amp; LXP.">Dẫn dắt FE Web (Next.js) + Mobile (React Native); xây Creator Platform &amp; LXP.</li>
-            <li data-vi="AI Tutor Agent dùng RAG; shared UI library (−30% dev time); tối ưu cho 1,000+ learner." data-en="RAG-powered AI Tutor Agent; shared UI library (−30% dev time); optimized for 1,000+ learners.">AI Tutor Agent dùng RAG; shared UI library (−30% dev time); tối ưu cho 1,000+ learner.</li>
+            <li data-vi="AI Tutor Agent dùng RAG; shared UI library (giảm 30% thời gian phát triển); tối ưu cho 1.000+ người học đồng thời." data-en="RAG-powered AI Tutor Agent; shared UI library (−30% dev time); optimized for 1,000+ concurrent learners.">AI Tutor Agent dùng RAG; shared UI library (giảm 30% thời gian phát triển); tối ưu cho 1.000+ người học đồng thời.</li>
           </ul>
         </div>
       </div>
@@ -719,24 +739,27 @@
 
   <!-- stack -->
   <h3 style="font-family:'JetBrains Mono';font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--blue);margin:54px 0 0" data-vi="TECH STACK" data-en="TECH STACK">TECH STACK</h3>
-  <div class="stack-grid reveal">
-    <div class="stack-col">
-      <h4>FRONTEND</h4>
-      <div class="items"><span>React.js</span><span>Next.js</span><span>React Native</span><span>Flutter</span><span>TypeScript</span><span>Redux Toolkit</span><span>TailwindCSS</span><span>Design Systems</span></div>
-    </div>
-    <div class="stack-col">
-      <h4>BACKEND · DEVOPS</h4>
-      <div class="items"><span>Node.js</span><span>NestJS</span><span>FastAPI</span><span>Golang</span><span>Strapi</span><span>PostgreSQL</span><span>MongoDB</span><span>WebSocket</span><span>Docker</span><span>CI/CD</span><span>Azure</span><span>GCP</span></div>
-    </div>
-    <div class="stack-col">
-      <h4>AI · LLM</h4>
-      <div class="items"><span>AI Agents</span><span>RAG Pipelines</span><span>LLM Streaming</span><span>Prompt Architecture</span><span>Persona Systems</span><span>Google ADK</span><span>Agno</span></div>
-    </div>
-    <div class="stack-col">
-      <h4 data-vi="MOBILE · DESIGN · PRODUCT" data-en="MOBILE · DESIGN · PRODUCT">MOBILE · DESIGN · PRODUCT</h4>
-      <div class="items"><span>Expo</span><span>Offline-first</span><span>App Store / Google Play</span><span>Figma</span><span>User Journey</span><span>QA / QC</span></div>
-    </div>
+  <div class="logo-wall reveal">
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" loading="lazy" onerror="this.remove()" /><span>React.js</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" loading="lazy" onerror="this.remove()" /><span>Next.js</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" loading="lazy" onerror="this.remove()" /><span>React Native</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" loading="lazy" onerror="this.remove()" /><span>Flutter</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" loading="lazy" onerror="this.remove()" /><span>TypeScript</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux" loading="lazy" onerror="this.remove()" /><span>Redux</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" loading="lazy" onerror="this.remove()" /><span>TailwindCSS</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" loading="lazy" onerror="this.remove()" /><span>Node.js</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" alt="NestJS" loading="lazy" onerror="this.remove()" /><span>NestJS</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" loading="lazy" onerror="this.remove()" /><span>FastAPI</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" loading="lazy" onerror="this.remove()" /><span>Golang</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" loading="lazy" onerror="this.remove()" /><span>PostgreSQL</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" loading="lazy" onerror="this.remove()" /><span>MongoDB</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/strapi/strapi-original.svg" alt="Strapi" loading="lazy" onerror="this.remove()" /><span>Strapi</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" loading="lazy" onerror="this.remove()" /><span>Docker</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" loading="lazy" onerror="this.remove()" /><span>Azure</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP" loading="lazy" onerror="this.remove()" /><span>GCP</span></div>
+    <div class="lg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" loading="lazy" onerror="this.remove()" /><span>Figma</span></div>
   </div>
+  <p class="stack-cap"><b>+</b> <span data-vi="AI Agents · RAG · LLM Streaming · Prompt Architecture · Google ADK · Agno · WebSocket · CI/CD · Design Systems · Expo · Offline-first · QA/QC" data-en="AI Agents · RAG · LLM Streaming · Prompt Architecture · Google ADK · Agno · WebSocket · CI/CD · Design Systems · Expo · Offline-first · QA/QC">AI Agents · RAG · LLM Streaming · Prompt Architecture · Google ADK · Agno · WebSocket · CI/CD · Design Systems · Expo · Offline-first · QA/QC</span></p>
 </section>
 
 <!-- ===================== CONTACT ===================== -->
